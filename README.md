@@ -1,6 +1,7 @@
 # JD2016 / Java Developer 2016.
 
 ###Начало работы:
+
 1. Инициализация. Нажмите Fork на странице https://github.com/Khmelov/JD2016/
 2. У вас в аккаунте fork появится тут  https://github.com/ваш_логин/JD2016
 3. Выберите в IDEA VCS -> Checkout version control -> GitHub и затем:

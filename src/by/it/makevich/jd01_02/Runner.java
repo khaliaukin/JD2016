@@ -13,6 +13,7 @@ public class Runner {
 
 		Double mean = TaskA.getArifm(arr);
 		System.out.println("Среднее арифметичекое значение длин всех чисел:"+mean);
+
 		System.out.print("Числа длина которых меньше "+mean+" таковы: ");
 		for (Integer i:arr) {
 			if (i.toString().length() < mean) {

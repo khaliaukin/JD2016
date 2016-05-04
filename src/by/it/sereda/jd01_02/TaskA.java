@@ -1,36 +1,38 @@
 package by.it.sereda.jd01_02;
 
 public class TaskA {
-    //метод поиска максимального элемента и его длины
+    //метод поиска самого длинного элемента
     //результат - строка для вывода на консоль
     static String getMax(int array[]) {
         int lenMax = 0;
         Integer max = Integer.MIN_VALUE;
         for (Integer i : array) {
-            if (max < i) {
+            if (lenMax < i.toString().length()) {
                 max=i;
+                lenMax = i.toString().length();
             }
         }
-        return "MAX=" + max.toString() + " length=" + max.toString().length();
+        return "length=" + max.toString().length() + " MAX=" + max.toString();
     }
-    //метод поиска минимального элемента и его длины
+    //метод поиска самого короткого элемента
     //результат - строка для вывода на консоль
     static String getMin(int array[]) {
-        int lenMax = 0;
+        int lenMin = 10;
         Integer min = Integer.MAX_VALUE;
         for (Integer i : array) {
-            if (min > i) {
+            if (lenMin > i.toString().length()) {
+                lenMin=i.toString().length();
                 min=i;
             }
         }
-        return "MIN=" + min.toString() + " length=" + min.toString().length();
+        return "length=" + min.toString().length() + " MIN=" + min.toString();
     }
 
-    //метод вычисления среднего арифмитического
+    //метод вычисления средней длины чисел
     static double mean(int array[]) {
         double res = 0;
         //все сложить
-        for (int i : array) res = res + i;
+        for (Integer i : array) res = res + i.toString().length();
         //найти среднее
         res = res / array.length;
         return res;

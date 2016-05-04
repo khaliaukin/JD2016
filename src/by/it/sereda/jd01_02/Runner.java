@@ -18,9 +18,9 @@ public class Runner {
 
         //2. Вывести на консоль те числа, длина которых меньше (больше) средней.
         double mean= TaskA.mean(arr);
-        System.out.println("Числа меньше "+mean+" таковы: ");
-        for (int i:arr) {
-            if (i<mean) {
+        System.out.println("Числа длина которых меньше средней "+mean+" таковы: ");
+        for (Integer i:arr) {
+            if (i.toString().length()<mean) {
                 System.out.println(i+" ");
             }
         }

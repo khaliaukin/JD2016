@@ -15,6 +15,18 @@ public class TaskB {
         return knmresult;
     }
 
+    /*static void matrixKNN (int[] knn) {
+        double definitioninfloat = Math.sqrt(knn[0]);
+        double definitioninfloatceil = Math.ceil(definitioninfloat);
+        int definition=(int)definitioninfloatceil;
+        int k =1;
+        for (int row = 0; row < definition; row++) {
+            for (int col = 0; col < definition; col++)
+                System.out.printf(" %3s ", k++);
+            System.out.println();
+        }
+    }*/
+
     static void matrixKNN (int[] knn) {
         double definitioninfloat = Math.sqrt(knn[0]);
         double definitioninfloatceil = Math.ceil(definitioninfloat);
@@ -25,15 +37,11 @@ public class TaskB {
             for (int col = 0; col < definition; col++)
                 m[row][col]=0;
         int k = knn[0];
-
-
-            for (int i=1; i<k+1; i++) {
+        int step=1;
             for (int row = 0; row < definition; row++)
                 for (int col = 0; col < definition; col++)
-                    m[row][col] = i;
-        }
-
-
+                    if (k+1>step)
+                        m[row][col] = step++;
 
         for (int i = 0; i < m.length; i++) {        //перебираем строки массива
             for (int j = 0; j < m[i].length; j++)
@@ -42,7 +50,9 @@ public class TaskB {
         }
         System.out.println();           //в конце массива выводится пустая строка
 
-        }
+    }
+
+
 
     static void quadEquation (double[] arrayabc) {
         double a = arrayabc[0];

@@ -6,7 +6,6 @@ package by.it.novik.jd01_work;
 public class Tasks {
     /**
      * Вывод промежутка времени в секундах в виде недель, суток, часов, минут, секунд
-     *
      * @param s Время в секундах
      */
     public void outputTime(int s) {

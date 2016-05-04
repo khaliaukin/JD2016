@@ -5,11 +5,6 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.Random;
 
-//import static java.util.Objects.isNull;
-
-/**
- * Created by Дмитрий on 02.05.2016.
- */
 public class TaskC {
     static int N;
 
@@ -36,72 +31,16 @@ public class TaskC {
         }
         System.out.println();
     }
-}
-/*
-    public static int sumBetweenPositiveOfArray(int[][] array) {
-        if (isNull(array)) {
-            throw new IllegalArgumentException();
-        }
-        int sum = 0;
 
-        for (int i = 0, matrixLength = array.length; i < matrixLength; i++) {
-            sum += sumBetweenPositiveOfRow(array[i]);
-        }
+    public static int [][] transpone(int[][] array) {
 
-        return sum;
-    }
 
-    private static int sumBetweenPositiveOfRow(int[] row) {
-        if (isNull(row)) {
-            throw new IllegalArgumentException();
-        }
-
-        int sum = 0;
-        int a = -1;
-        int b = -1;
-        int i = 0;
-        int rowLength = row.length;
-
-        while ((a == -1 || b == -1) & i < rowLength) {
-            if (row[i] > 0) {
-                if (a == -1) {
-                    a = i;
-                } else {
-                    b = i;
-                }
-            }
-            i++;
-        }
-
-        return sumBetweenTwoElements(row, a, b);
-    }
-
-    private static int sumBetweenTwoElements(int[] row, int a, int b) {
-
-        if (isNull(row) || a < -1 || a > row.length || b < -1 || b > row.length || (a > b && b != -1)) {
-            throw new IllegalArgumentException();
-        }
-
-        if (a == -1 || b == -1) {
-            return 0;
-        } else {
-            int sum = 0;
-            for (int i = a; i <= b; i++) {
-                sum += row[i];
-            }
-            return sum;
-        }
-    }
-
-    public static Object[][] transpone(Object[][] array) {
-
-        Object[][] tmp = new Object[array[0].length][array.length];
         for (int i = 0; i < array[0].length; i++) {
             for (int j = 0; j <array.length; j++) {
-                tmp[i][j] = array[j][i];
+                array[i][j] = array[j][i];
             }
         }
-        return tmp;
+        System.out.println(array);
+        return array;
     }
 }
-*/

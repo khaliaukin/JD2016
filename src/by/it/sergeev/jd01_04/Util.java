@@ -1,8 +1,5 @@
 package by.it.sergeev.jd01_04;
 
-/**
- * Created by Дмитрий on 29.04.2016.
- */
 public class Util {
     public static double maxIntArray(double[] mas){
         if (0 == mas.length)

@@ -2,9 +2,6 @@ package by.it.sergeev.jd01_04;
 
 import java.io.IOException;
 
-/**
- * Created by user_2 on 29.04.2016.
- */
 public class Main {
     public static void main (String [] args ) throws IOException {
         String line = "71 12 14 789 6 565 76 712";

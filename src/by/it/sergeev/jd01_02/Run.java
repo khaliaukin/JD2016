@@ -1,11 +1,9 @@
 package by.it.sergeev.jd01_02;
 
+import java.io.BufferedReader;
 import java.io.IOException;
+import java.io.InputStreamReader;
 
-
-/**
- * Created by user_2 on 27.04.2016.
- */
 public class Run {
     public static void main (String [] args) throws IOException {
         //А1. Найти самое короткое и самое длинное число. Вывести найденные числа и их длинну.
@@ -38,6 +36,10 @@ public class Run {
         int K = 6;
         TaskB.getArray(K);
         //B3. Найти корни квадратного уравнения. Параметры уравнения передавать с командной строкой.
+        /**
+         * параметры зажаются в Run- Edit Configuration - Program arguments
+         *  рекомендуемые 2 -9 10
+         */
         System.out.println("Находеним корни квадратного уравнения по формуле ax^2 + bx + c = 0, a != 0");
         int a = Integer.parseInt(args[0]);
         int b = Integer.parseInt(args[1]);
@@ -57,7 +59,7 @@ public class Run {
             }
         }
         //B4. Ввести число от 1 до 12. Вывести на консоль название месяца соответствующего данному числу. Осуществить проверку корректности ввода чисел.
-        /*System.out.println("Введите номер месяца от 1 до 12");
+        System.out.println("Введите номер месяца от 1 до 12");
         BufferedReader r = new BufferedReader(new InputStreamReader(System.in));
         int mount = Integer.parseInt(r.readLine());
         if (mount==1)
@@ -86,10 +88,12 @@ public class Run {
             System.out.println("December");
         else
             System.out.println("Вы должны были ввести числа от 1 до 12.");
-            */
+
         //C
         int[][] array = TaskC.randomArray();
         TaskC.printArray(array);
+
+        //array =TaskC.transpone(array);
 
         //C 1.test
         //System.out.println(TaskC.sumBetweenPositiveOfArray(array));

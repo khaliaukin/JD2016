@@ -1,5 +1,6 @@
 package by.it.sergeev.jd01_05;
 
+import by.it.akhmelev.jd01_05.math.Task6;
 import by.it.sergeev.jd01_05.TaskA.*;
 
 
@@ -28,5 +29,13 @@ public class Main {
 
         //A5
         A5.calculate();
+        System.out.println("-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-");
+
+        //A6
+        double a[] = Task6.getArray();
+        Task6 task6 = new Task6();
+        task6.printArray(a, "testname", true);
+        double b[] = task6.getEveryThirdElement(a);
+        task6.printArray(b, "array", true);
     }
 }

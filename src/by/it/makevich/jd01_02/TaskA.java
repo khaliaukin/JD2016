@@ -8,7 +8,7 @@ public class TaskA {
 				max = i;
 			}
 		}
-		return "Самое большое введенное число="+ max.toString()+ ", длина числа="+max.toString().length()+" цифр";
+		return "Самое длинное введенное число="+ max.toString()+ ", длина числа="+max.toString().length()+" цифр";
 	}
 
 	static String getMin(int array[]) {
@@ -18,7 +18,7 @@ public class TaskA {
 				min = i;
 			}
 		}
-		return "Самое маленькое введенное число="+ min.toString()+ ", длина числа="+min.toString().length()+" цифр";
+		return "Самое короткое введенное число="+ min.toString()+ ", длина числа="+min.toString().length()+" цифр";
 	}
 
 	/**

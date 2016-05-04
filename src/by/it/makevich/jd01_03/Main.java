@@ -3,9 +3,9 @@ import java.io.IOException;
 public class Main {
 	public static void main (String[] args) throws IOException {
 
-		String line = InOut.consoleReadLine(); //получили введенную строку с консоли
+		//String line = InOut.consoleReadLine(); //получили введенную строку с консоли
 
-		//String line = "32.43 34.3 12.65 12.43";
+		String line = "32.43 34.3 12.65 12.43 45.34 543.3 23.3";
 		Double[] arrayDouble = InOut.getArrayDoubleFromRline(line);//создали масив типа Double из введенной строки
 		System.out.print("Числа введенные из консоли: ");
 		InOut.printDoubleArray(arrayDouble); //вывели массив на экран

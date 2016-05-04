@@ -12,19 +12,13 @@ public class Runner {
 		System.out.println(min);
 
 		Double mean = TaskA.getArifm(arr);
-		System.out.println("Числа длина которых меньше "+mean+" таковы: ");
+		System.out.print("Числа длина которых меньше "+mean+" таковы: ");
 		for (Integer i:arr) {
 			if (i.toString().length() < mean) {
 				System.out.print(i+" ");
 			}
 		}
-		System.out.println();
-		System.out.println("Числа длина которых больше "+mean+" таковы: ");
-		for (Integer i:arr) {
-			if (i.toString().length() > mean) {
-				System.out.print(i+" ");
-			}
-		}
+
 		System.out.println();
 		for (int i: arr) {
 			if (TaskA.getNumberWithAllDiffrentDigits(i))

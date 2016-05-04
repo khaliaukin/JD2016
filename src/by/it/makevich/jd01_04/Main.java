@@ -1,11 +1,14 @@
 package by.it.makevich.jd01_04;
 
+import java.io.IOException;
+
 public class Main {
-	public static void main(String[] args) {
-		double[][] matrixA = {{43.4,32.3,32.43,23.4},{43.2,543.54,643.32,654.4},{65.3,23.3,65.4,2.3},{32.3,43.2,54.2,23.2}};
-		double[] vectorY = {43.34,23.5,23.12,43.3};
-		TaskA.findRoot(matrixA, vectorY);
+	public static void main(String[] args) throws IOException {
+		double[][] matrixA = {{4,2,5,3},{5,5,2,6},{6,12,4,8},{3,3,4,9}};
+		double[] vectorY = {1,14,32,23};
 		double[] x = TaskA.findRoot(matrixA,vectorY);
-		TaskA.printArray(x,"x",1);
+		InOut.printArray(x,"X");//выводим на экран решенную СЛАУ
+		double[]z=TaskA.arrayMulVector(matrixA, x);
+		InOut.printArray(z,"YY");
 	}
 }

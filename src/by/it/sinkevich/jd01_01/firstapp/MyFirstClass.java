@@ -1,10 +1,10 @@
 package by.it.sinkevich.jd01_01.firstapp;
 
-public class MyFirstClass {
+class MyFirstClass {
 
     private String slogan = "Hello World!";
 
-    public void setSlogan(String slogan) {
+    void setSlogan(String slogan) {
         this.slogan = slogan;
     }
 

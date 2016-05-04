@@ -1,6 +1,11 @@
 package by.it.makevich.jd01_02;
 
 public class Util {
+	/**
+	 *
+	 * @param line строка чисел с консоли
+	 * @return возвращает массив чисел
+	 */
 	static int[] lineToIntArray(String line){
 		String[] strMas = line.split(" ");
 		int[] array = new int[strMas.length];

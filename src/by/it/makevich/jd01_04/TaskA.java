@@ -1,7 +1,12 @@
 package by.it.makevich.jd01_04;
 
 public class TaskA {
-
+	/**
+	 * метод решения СЛАУ методом Жордана-Гауса
+	 * @param mA входной массив матрицы
+	 * @param mY входной вектор правых частей СЛАУ
+	 * @return решенная СЛАУ
+	 */
 	public static double[]findRoot(double[][]mA,double[] mY){
 		int n = mA.length;
 		double[][] matrixA = new double[n][n+1];
@@ -40,7 +45,18 @@ public class TaskA {
 			x[i]=matrixA[i][n];
 		return x;
 	}
-	public static void printArray(double[]arr,String x,int row){
 
+	/**
+	 * метод проверки
+	 * @param mA матрица чисел
+	 * @param y вектор решения метода findRoot
+	 * @return
+	 */
+	public static double[] arrayMulVector(double[][]mA, double y[]){
+	double[] z=new double[mA.length];
+		for (int i=0;i<mA.length;i++)
+			for (int j=0;j<y.length;j++)
+				z[i]= z[i]+mA[i][j]*y[j];
+		return z;
 	}
 }

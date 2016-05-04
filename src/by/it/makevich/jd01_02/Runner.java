@@ -12,6 +12,7 @@ public class Runner {
 		System.out.println(min);
 
 		Double mean = TaskA.getArifm(arr);
+		System.out.println("Среднее арифметичекое значение длин всех чисел:"+mean);
 		System.out.print("Числа длина которых меньше "+mean+" таковы: ");
 		for (Integer i:arr) {
 			if (i.toString().length() < mean) {
@@ -29,11 +30,11 @@ public class Runner {
 		}
 		System.out.println();
 /**
- * Задание С.
+ * Задание С. (Будет доделываться)
  *
  */
-		int[][] array2D = TaskC.get2DArrayFromLine(line);// получаем двухмерный массив из введенных с консоли чисел
-		TaskC.array2DPrint(array2D);// выводим массив на экран
+		/*int[][] array2D = TaskC.get2DArrayFromLine(line);// получаем двухмерный массив из введенных с консоли чисел
+		TaskC.array2DPrint(array2D);// выводим массив на экран*/
 	}
 }
 

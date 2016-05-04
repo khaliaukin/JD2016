@@ -5,8 +5,8 @@ import java.io.IOException;
 public class Runner {
 
     public static void main(String[] args) throws IOException {
-        //String line = Util.getString();
-        String line = "77 23 45 321 -111 -586 7 16 77 999 -555 18 56 777 422 342";
+        String line = Util.getString();
+        //String line = "77 23 45 321 -111 -586 7 16 77 999 -555 18 56 777 422 342";
         int[] arr = Util.lineToIntArray(line);
 
         System.out.println("Задание А!");
@@ -30,9 +30,9 @@ public class Runner {
 
         double average = taskA.getAverage(arr);
         System.out.print("Числа, которые меньше среднего арифметического(" + average + "): ");
-        for (int i = 0; i < arr.length; i++) {
-            if (arr[i] < average) {
-                System.out.print(arr[i] + " ");
+        for (int anArr : arr) {
+            if (anArr < average) {
+                System.out.print(anArr + " ");
             }
         }
         System.out.println();
@@ -48,7 +48,7 @@ public class Runner {
         if (!isUniqueNumberFound) {
             System.out.println("Чисел с различными цифрами найдено не было.");
         }
-        /*
+
         System.out.println();
         System.out.println("Задание B!");
         TaskB taskB = new TaskB();
@@ -70,7 +70,7 @@ public class Runner {
         System.out.print("Введите число от 1 до 12, для определения месяца: ");
         int monthNumber = Util.getInt();
         taskB.getMonthFromInt(monthNumber);
-        */
+
         System.out.println();
         System.out.println("Задание С!");
         System.out.print("Введите размерность матрицы: ");
@@ -80,5 +80,7 @@ public class Runner {
         taskC.transpondMatrix();
         taskC.rotateMatrix();
         taskC.averageDifference();
+        taskC.deleteRowsAndColsWithMaximum();
+        Util.closeReader();
     }
 }

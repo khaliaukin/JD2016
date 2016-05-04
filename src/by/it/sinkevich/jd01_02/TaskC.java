@@ -1,17 +1,14 @@
 package by.it.sinkevich.jd01_02;
 
 class TaskC {
+    //Создаём отдельное поле класса для последовательных модификаций
     private int[][] matrix;
-
-    public int[][] getMatrix() {
-        return matrix;
-    }
 
     public TaskC() {
         this(10);
     }
 
-    public TaskC(int length) {
+    TaskC(int length) {
         matrix = new int[length][length];
         for (int i = 0; i < matrix.length; i++) {
             for (int j = 0; j < matrix.length; j++) {
@@ -23,7 +20,7 @@ class TaskC {
     private void printMatrix() {
         Util.matrixOut(matrix);
     }
-
+    //Метод плохо отрабатывает для матриц маленького размера
     void sumBetweenTwoPositives() {
         int sum = 0;
         for (int i = 0; i < matrix.length; i++) {
@@ -71,10 +68,11 @@ class TaskC {
                 matrix[i][j] = copy[i][j];
             }
         }
-        System.out.println("Поворот матрица на 90 градусов: ");
+        System.out.println("Поворот матрицы на 90 градусов: ");
         printMatrix();
     }
-
+    /*Округлял среднее арифметическое, так как в последующем задании очевидно,
+    что тогда найдёт только одну строку и столбец для удаления, а это неинтересно*/
     void averageDifference() {
         for (int i = 0; i < matrix.length; i++) {
             double average = new TaskA().getAverage(matrix[i]);
@@ -87,10 +85,12 @@ class TaskC {
     }
 
     void deleteRowsAndColsWithMaximum() {
+        //Ищем максимальный элемент матрицы
         int max = Integer.MIN_VALUE;
         for (int[] row : matrix) {
             max = Math.max(max, new TaskA().getMax(row));
         }
+        //Помечаем строки и столбцы, которые надо будет удалить
         int[] deleteRowsIndex = new int[matrix.length];
         int[] deleteColsIndex = new int[matrix.length];
         for (int i = 0; i < matrix.length; i++) {
@@ -101,6 +101,37 @@ class TaskC {
                 }
             }
         }
-
+        System.out.println("Максимальный элемент матрицы: " + max);
+        //Считаем сколько стобцов и строк надо оставить, чтобы правильно создать новый результирующий массив
+        int resultRows = 0;
+        int resultCols = 0;
+        for (int i = 0; i < matrix.length; i++) {
+            if (deleteRowsIndex[i] == 0) {
+                resultRows++;
+            }
+            if (deleteColsIndex[i] == 0) {
+                resultCols++;
+            }
+        }
+        int[][] result = new int[resultRows][resultCols];
+        //Проходим основную матрицу и делаем счётчики resultRows и resultCols
+        // для правильного индексирования рещультирующей матрицы
+        resultRows = 0;
+        for (int row = 0; row < matrix.length; row++) {
+            if (deleteRowsIndex[row] == 1) {
+                continue;
+            }
+            resultCols = 0;
+            for (int col = 0; col < matrix.length; col++) {
+                if (deleteColsIndex[col] == 1) {
+                    continue;
+                }
+                result[resultRows][resultCols] = matrix[row][col];
+                resultCols++;
+            }
+            resultRows++;
+        }
+        System.out.println("Матрица без строк и столбцов, содержащих максимальный элемент: ");
+        Util.matrixOut(result);
     }
 }

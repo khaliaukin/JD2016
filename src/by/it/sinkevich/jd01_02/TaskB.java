@@ -35,6 +35,7 @@ class TaskB {
     }
 
     void findSquareRoots(int a, int b, int c) {
+        //Обработка невалидных данных
         if (a == 0 && b != 0) {
             double root = - c / b;
             System.out.println("Корень уравнения равен: " + root);
@@ -43,6 +44,7 @@ class TaskB {
             System.out.println("Введены неправильные входные данные!");
             return;
         }
+        //Основной алгоритм решения квадратного уравнения
         double discr = b * b - 4 * a * c;
         if (discr > 0) {
             double root1 = (- b + discr) / (2 * a);

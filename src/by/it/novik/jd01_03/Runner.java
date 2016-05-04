@@ -3,7 +3,7 @@ package by.it.novik.jd01_03;
 import java.io.IOException;
 
 /**
- * Created by Kate Novik on 01.05.2016.
+ * Created by Kate Novik.
  */
 public class Runner  {
     public static void main(String[] args) throws IOException {

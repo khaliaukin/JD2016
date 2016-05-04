@@ -1,7 +1,7 @@
 package by.it.novik.jd01_03;
 
 /**
- * Created by user_2 on 29.04.2016.
+ * Created by Kate Novik.
  */
 public class Util {
     /**

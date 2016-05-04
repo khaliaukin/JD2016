@@ -1,10 +1,10 @@
-package by.it.novik.jd01_04.SLAU;
+package by.it.novik.jd01_04;
 
 import by.it.novik.jd01_03.InOut;
 import by.it.novik.jd01_03.Util;
 
 /**
- * Created by Катя on 02.05.2016.
+ * Created by Kate Novik.
  */
 public class SLAU {
     private double determinant; //Определитель матрицы

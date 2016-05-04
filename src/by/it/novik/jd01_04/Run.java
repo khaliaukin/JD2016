@@ -1,11 +1,11 @@
-package by.it.novik.jd01_04.SLAU;
+package by.it.novik.jd01_04;
 
 import by.it.novik.jd01_03.InOut;
 
 import java.io.IOException;
 
 /**
- * Created by Катя on 02.05.2016.
+ * Created by Kate Novik.
  */
 public class Run {
 

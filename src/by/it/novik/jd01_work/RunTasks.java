@@ -1,7 +1,9 @@
-package by.it.novik.jd01_04.WorkBook;
+package by.it.novik.jd01_work;
+
+import by.it.novik.jd01_work.Tasks;
 
 /**
- * Created by Катя on 03.05.2016.
+ * Created by Kate Novik.
  */
 public class RunTasks {
     public static void main(String[] args) {

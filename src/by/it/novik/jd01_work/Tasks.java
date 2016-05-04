@@ -1,7 +1,7 @@
-package by.it.novik.jd01_04.WorkBook;
+package by.it.novik.jd01_work;
 
 /**
- * Created by Катя on 03.05.2016.
+ * Created by Kate Novik.
  */
 public class Tasks {
     /**
@@ -191,10 +191,10 @@ public class Tasks {
         }
         //Поиск № ученика с максимальной оценкой
         int maxMark=marks[0];//Максимальная оценка
-        int maxIndex=0;//№ ученика с максимальной оценкой
+        int maxIndex=0;//массив номеров учеников с максимальной оценкой
         for (int i=0;i<amount;i++){
             if (maxMark<marks[i])
-                maxIndex=i;
+            {maxIndex=i;}
         }
         System.out.println("Максимальная оценка у ученика № "+maxIndex);
     }

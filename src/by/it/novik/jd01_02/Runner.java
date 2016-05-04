@@ -2,10 +2,13 @@ package by.it.novik.jd01_02;
 
 import by.it.novik.jd01_02.Tasks.TaskA;
 import by.it.novik.jd01_02.Tasks.TaskB;
+import by.it.novik.jd01_02.Tasks.TaskC;
 import by.it.novik.jd01_02.Utils.Util;
 
 import java.io.IOException;
-
+/**
+ * Created by Kate Novik.
+ */
 public class Runner {
 
     public static void main(String[] args) throws IOException {
@@ -78,6 +81,27 @@ public class Runner {
             numMonth = Integer.parseInt(line4);
         }
         while (!taskB.printMonth(numMonth));
+
+        /**
+         * Создание объекта класса TaskC
+         */
+        TaskC taskC = new TaskC();
+        /*TaskC taskC = new TaskC(new int[][]{
+                {-3, -2, 6, 9, 9, 8},
+                {-3, -2, 6, 9, 9, 8},
+                {-3, -2, 6, 10, 9, 8},
+                {-3, -2, 6, 9, 9, 8},
+                {-3, 10, 6, 9, 9, 8},
+                {-3, 10, 6, 9, 9, 8}
+        }, 6);*/
+
+        taskC.task1();
+        taskC.task2();
+        taskC.task3();
+        taskC.task4();
+        taskC.task5();
+        taskC.task6();
+        taskC.task7();
 
     }
 

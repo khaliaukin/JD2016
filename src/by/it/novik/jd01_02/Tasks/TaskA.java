@@ -1,7 +1,7 @@
 package by.it.novik.jd01_02.Tasks;
 
 /**
- * Created by Kate Novik on 27.04.2016.
+ * Created by Kate Novik.
  */
 
 public class TaskA {

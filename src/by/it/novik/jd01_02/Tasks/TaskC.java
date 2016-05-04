@@ -4,7 +4,9 @@ import by.it.novik.jd01_02.Utils.Util;
 import java.io.IOException;
 import java.util.*;
 
-
+/**
+ * Created by Kate Novik.
+ */
 public class TaskC {
 
     private int[][] array; //Массив

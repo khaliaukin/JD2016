@@ -5,7 +5,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 
 /**
- * Created by Kate Novik on 27.04.2016.
+ * Created by Kate Novik.
  */
 public class Util {
 

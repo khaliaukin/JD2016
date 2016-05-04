@@ -5,7 +5,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 
 /**
- * Created by user_2 on 29.04.2016.
+ * Created by Kate Novik.
  */
 public class InOut {
 

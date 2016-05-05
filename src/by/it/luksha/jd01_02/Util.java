@@ -24,6 +24,7 @@ public class Util {
      * @return массив int
      */
     public static int[] stringToArrayInt(String line) {
+        line = line.trim();
         String[] strArr = line.split(" ");
         int[] intArr = new int[strArr.length];
         for(int i = 0; i < strArr.length; i++){
@@ -55,6 +56,22 @@ public class Util {
                 System.out.printf("[%5.2f]", element);
             System.out.println();
         }
+    }
+
+    /**
+     * Метод проверяет вхождение элемента в массив
+     * @param matrix массив
+     * @param toLook элемент
+     * @return входит/не_входит
+     */
+    public static boolean isHas(int[] matrix, int toLook) {
+        boolean isHas = false;
+        for (int element: matrix) {
+            if (element == toLook)
+                isHas = true;
+        }
+
+        return isHas;
     }
 
 }

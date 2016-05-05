@@ -22,7 +22,7 @@ public class TaskC {
     }
 
     /**
-     * Метод создает матрицу произвольного размера
+     * Метод создает матрицу произвольного размера и заполняет значениями от -5 до +5
      * @param row число строк
      * @param col число столбцов
      * @return матрица
@@ -152,12 +152,15 @@ public class TaskC {
         return resultMatrix;
     }
 
-
-    /*public static int[][] matrixWithoutMax(int[][] matrix) {
+    /**
+     * Метод ищет максимальный элемент в матрице произвольного размера и удаляет строки и столбцы его содержащие
+     * @param matrix матрица для поиска
+     */
+    public static void matrixWithoutMax(int[][] matrix) {
         int m = matrix.length;
         int n = matrix[0].length;
         int maxElement = Integer.MIN_VALUE;
-        String strForNewMatrix = "Data:";
+        String strForNewMatrix = "";
 
         //ищем максимальный элемент в матрице
         for (int i = 0; i < m; i++) {
@@ -165,12 +168,82 @@ public class TaskC {
                 maxElement = maxElement > matrix[i][j] ? maxElement : matrix[i][j];
             }
         }
-        //===========================================
 
+        //получаем строку элементов через пробел не стоящих в одной строке/столбце с максимальных значением
+        for (int i = 0; i < m; i++) {
+            for (int j = 0; j < n; j++) {
+                boolean isDelete = true;
 
-        System.out.println(strForNewMatrix);
-        return null;
-    }*/
+                if (matrix[i][j] != maxElement)
+                {
+                    for (int k = 0; k < n; k++) {
+                        if (matrix[i][k] != maxElement)
+                        {
+                            for (int l = 0; l < m; l++) {
+                                if (matrix[l][j] != maxElement)
+                                {
+                                    isDelete = false;
+                                }
+                                else
+                                {
+                                    isDelete = true;
+                                    break;
+                                }
+                            }
+                        }
+                        else
+                        {
+                            isDelete = true;
+                            break;
+                        }
+                    }
+                }
+                else
+                    isDelete = true;
 
+                if (!isDelete)
+                    strForNewMatrix = strForNewMatrix + " " + matrix[i][j];
+            }
+        }
+
+        //находим размер новой матрицы
+        int newRow = m;
+        int newCol = n;
+        for (int i = 0; i < m; i++) {
+            if (Util.isHas(matrix[i], maxElement))
+                newRow--;
+        }
+
+        for (int i = 0; i < n; i++) {
+            int[] array = new int[m];
+            for (int j = 0; j < m; j++) {
+                array[j] = matrix[j][i];
+            }
+            if (Util.isHas(array, maxElement))
+                newCol--;
+        }
+
+        if (newRow == 0 && newCol == 0)
+        {
+            System.out.println("Такой матрицы не существует");
+        }
+        else
+        {
+            int[] forNewMatrix = Util.stringToArrayInt(strForNewMatrix); //массив для заполнения итоговой матрицы
+
+            int[][] result = new int[newRow][newCol]; //итоговая матрица
+
+            //заполняем матрицу результат
+            int k = 0;
+            for (int i = 0; i < newRow; i++) {
+                for (int j = 0; j < newCol; j++) {
+                    result[i][j] = forNewMatrix[k];
+                    k++;
+                }
+            }
+            System.out.println("Матрица без максимального элемента \"" + maxElement + "\" имеет вид:");
+            Util.outArray2D(result);
+        }
+    }
 
 }

@@ -5,7 +5,6 @@ import java.io.IOException;
 public class Run {
     public static void main(String[] args) throws IOException {
 
-
         //TaskA
         System.out.println("                                                                            Task A...");
         //String line = Util.getLine();
@@ -72,7 +71,13 @@ public class Run {
         int sizeOfMatrix = 4;
         System.out.println("Размер матрицы - " + sizeOfMatrix);
         int[][] matrix = TaskC.createMatrix(sizeOfMatrix);
+
         int[][] matrixNanQuad = TaskC.createMatrix(2, 3); //неквадратная матрица
+        int[][] matrixTest = {
+                {3, 0, 0},
+                {0, 5, 4},
+                {5, 1, 0},
+        };
 
         Util.outArray2D(matrix);
         System.out.println("========================================================================================================");
@@ -103,9 +108,16 @@ public class Run {
         System.out.println();
         System.out.println("========================================================================================================");
 
-        /*
+
+
+        System.out.println("5. Найти максимальный элемент(ы) в матрице и удалить из матрицы все строки и столбцы, его содержащие.");
+        Util.outArray2D(matrixTest);
+        TaskC.matrixWithoutMax(matrixTest);
+        System.out.println();
         Util.outArray2D(matrixNanQuad);
-        Util.outArray2D(TaskC.matrixWithoutMax(matrixNanQuad));
-        TaskC.matrixWithoutMax(matrixNanQuad);*/
+        TaskC.matrixWithoutMax(matrixNanQuad);
+        System.out.println();
+        System.out.println("========================================================================================================");
+
     }
 }

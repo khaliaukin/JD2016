@@ -1,7 +1,7 @@
 package by.it.sereda.jd01_04;
 
 public class Main {
-    public static void main (String[] args) throws IndexOutOfBoundsException{
+    public static void main (String[] args) throws IndexOutOfBoundsException {
         //String line=InOut.consoleReadLine();
         //String line = "71 12 14 789 6 565 76 712";
         String line = "99 100 101 102 106 200 209 1";
@@ -24,6 +24,8 @@ public class Main {
 
         System.out.println("Максимум массива Max="+Utils.maxArray(v));
         System.out.println("Максимум массива Min="+Utils.minArray(v));
+
+        //double[][] m=InOut.consoleReadLine2d(); //ввод двумерного массива с клавиатуры
 
         double [] y={20, 11, 40, 37};
 

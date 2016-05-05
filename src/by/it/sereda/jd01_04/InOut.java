@@ -3,6 +3,7 @@ package by.it.sereda.jd01_04;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.Scanner;
 
 public class InOut {
     /**
@@ -14,7 +15,7 @@ public class InOut {
         InputStreamReader iStreamReader=new InputStreamReader(System.in);
         BufferedReader line=new BufferedReader(iStreamReader);
         String out=line.readLine();
-        line.close();
+        //line.close();
         return out;
     }
 
@@ -33,10 +34,29 @@ public class InOut {
         return mas;
     } //end stringLineToArray
 
+    public static double[][] consoleReadLine2d() throws IOException {
+        Scanner in = new Scanner(System.in);
+        System.out.print("Введите количество строк массива: ");
+        int linein = in.nextInt();
+        System.out.print("Введите количество столбцов массива: ");
+        int colin = in.nextInt();
+        in.close();
+        double[][] arr = new double[linein][colin];
+        for (int i = 0; i < linein; i++) {
+            System.out.print("Введите элементы [" + i + "]-й строки:");
+            InputStreamReader iStreamReader = new InputStreamReader(System.in);
+            BufferedReader line2 = new BufferedReader(iStreamReader);
+            String lineout = line2.readLine();
+            lineout = lineout.trim();
+            String[] elemString2 = lineout.split(" ");      //преобразование строки в массив
+            int count2 = elemString2.length;              //найдем длину массива
+            for (int z = 0; z < count2; z++) {            //заполнили его
+                arr[i][z] = Double.parseDouble(elemString2[z]);
+            }
 
-
-
-
+        }
+        return arr;
+    }
 
 
 

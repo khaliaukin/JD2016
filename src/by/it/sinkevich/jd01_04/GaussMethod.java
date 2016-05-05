@@ -2,9 +2,9 @@ package by.it.sinkevich.jd01_04;
 
 import by.it.sinkevich.jd01_03.InOut;
 
-public class GaussMethod {
+class GaussMethod {
 
-    public static double[] findRoot(double[][] matrix, double[] vectorY, boolean showSteps) {
+    static double[] findRoot(double[][] matrix, double[] vectorY, boolean showSteps) {
         int matrixSize = matrix.length;     //размер системы уравнений
         double[][] slau = new double[matrixSize][matrixSize + 1];
         //перенос матрицы matrix в операционную матрицу slau
@@ -69,7 +69,7 @@ public class GaussMethod {
         return vectorX;
     }
 
-    public static double findDeterminant(double[][] matrix) {
+    static double findDeterminant(double[][] matrix) {
         //создание копии матрицы
         double[][] matrixCopy = new double[matrix.length][matrix.length];
         for (int row = 0; row < matrix.length; row++) {
@@ -93,7 +93,7 @@ public class GaussMethod {
         return determinant;
     }
 
-    public static double[][] inverseMatrix(double[][] matrix) {
+    static double[][] inverseMatrix(double[][] matrix) {
         int matrixSize = matrix.length;     //размер матрицы
         double[][] slau = new double[matrixSize][2 * matrixSize];
         //перенос матрицы matrix в операционную матрицу slau

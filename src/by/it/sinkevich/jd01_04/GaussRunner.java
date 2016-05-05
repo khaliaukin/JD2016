@@ -8,17 +8,17 @@ import java.io.IOException;
 public class GaussRunner {
 
     public static void main(String[] args) throws IOException {
-        //System.out.println("Введите матрицу коэффициентов СЛАУ: ");
-        //double[][] matrix = InOut.matrixIn();
-        double[][] matrix = {
+        System.out.println("Введите матрицу коэффициентов СЛАУ: ");
+        double[][] matrix = InOut.matrixIn();
+        /*double[][] matrix = {
                 {2, 5, 4, 1},
                 {1, 3, 2, 1},
                 {2, 10, 9, 7},
                 {3, 8, 9, 2}
-        };
-        //System.out.println("Введите вектор значений СЛАУ: ");
-        //double[] vectorY = InOut.arrayIn();
-        double[] vectorY = {20, 11, 40, 37};
+        };*/
+        System.out.println("Введите вектор значений СЛАУ: ");
+        double[] vectorY = InOut.arrayIn();
+        //double[] vectorY = {20, 11, 40, 37};
         double[] vectorX = GaussMethod.findRoot(matrix, vectorY, true);
         System.out.println("Корни СЛАУ:");
         InOut.arrayOut(vectorX);

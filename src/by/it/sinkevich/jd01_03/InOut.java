@@ -15,7 +15,7 @@ public class InOut {
      * @return одномерный массив
      * @throws IOException
      */
-    static double[] arrayIn() throws IOException {
+    public static double[] arrayIn() throws IOException {
         System.out.println("Введите строку элементов через пробел:");
         String line = READER.readLine();
 
@@ -32,7 +32,7 @@ public class InOut {
      * @return двумерный массив
      * @throws IOException
      */
-    static double[][] matrixIn() throws IOException {
+    public static double[][] matrixIn() throws IOException {
         System.out.print("Введите количество строк матрицы: ");
         int count = Integer.parseInt(READER.readLine());
         double[][] matrix = new double[count][];

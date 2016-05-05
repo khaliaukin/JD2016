@@ -1,9 +1,20 @@
 package by.it.vasilevich.jd01_04;
 
 
-import java.io.IOException;
-
 public class Utils {
+
+    public static double[] lineToIntArray (String line){
+        String strMas[] = line.split(" ");
+        // разбили строку line разделителем " ";
+        // получили массив strMas{введенные числа};
+        double dMas[] = new double[strMas.length];
+        // в массив intMas[] вносятся целые числа массива strMas[];
+        for (int i = 0; i < strMas.length; i++) {
+            dMas[i] = Double.parseDouble(strMas[i]);
+        }
+        return dMas;
+    }
+    //////////////////////////////////////////////////////////////////////////
     public static double[] findRoot (double[][] mA, double[] mY, boolean showSteps) {
         int n = mA.length;//размер двумерной матрицы;
         double[][] m = new double[n][n + 1];
@@ -24,7 +35,7 @@ public class Utils {
                 for (int col = 0; col < n + 1; col++)
                     m[row][col] = m[row][col] - m[diag][col] * k;
             }
-        //обратный ход;
+    //обратный ход;
         for (int diag = n - 1; diag > 0; diag--) {
             for (int row = 0; row < diag; row++) {
                 k = m[row][diag] / m[diag][diag];
@@ -45,7 +56,7 @@ public class Utils {
             x[i]=m[i][n];
         return x;
     }
-    ///////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////
     public static double[] arrayMulVector(double[][]x,double[]y){
         double[]z=new double[x.length];
         for (int i=0; i<x.length; i++)
@@ -62,9 +73,9 @@ public class Utils {
                 z[i][j]=z[i][j]+x[i][k]*y[k][j];
         return z;
     }
-    //////////////////////////////////////////////////////////////////
+    ////////////////////////////////////////////////////////////////
 
-    public static void mail (String[] args) throws IOException{
+    public static void main (String[] args){
         double[]y={20,11,40,37};
         double[][]m={
                 {2, 5,  4, 1},
@@ -73,7 +84,7 @@ public class Utils {
                 {3, 8,  9, 2}
         };
         double[]x=Utils.findRoot(m,y,false);
-        //InOut.arrayPrint(x,"X",1);
-        //InOut.arrayPrint(Utils.arrayMulVector(m,x), "yy", 4);
+//        InOut.arrayOne(x,"X",1);
+//        InOut.arrayDouble(Utils.arrayMulVector(m,x), "yy", 4);
     }
 }

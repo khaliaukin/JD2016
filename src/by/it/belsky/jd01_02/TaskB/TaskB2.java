@@ -14,8 +14,8 @@ public class TaskB2 {
         BufferedReader line = new BufferedReader(iSstreamreader);
         System.out.println("Введите массив");
         String out = line.readLine();
-        line.close();
-        System.out.println("Введенный массив" + out);
+        //line.close();
+
         return out;
     }
 

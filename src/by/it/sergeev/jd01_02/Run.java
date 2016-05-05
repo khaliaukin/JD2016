@@ -93,7 +93,7 @@ public class Run {
         int[][] array = TaskC.randomArray();
         TaskC.printArray(array);
 
-        //array =TaskC.transpone(array);
+        TaskC.transpone();
 
         //C 1.test
         //System.out.println(TaskC.sumBetweenPositiveOfArray(array));

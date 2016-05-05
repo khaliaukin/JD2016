@@ -15,19 +15,21 @@ public class TaskB {
         return knmresult;
     }
 
-    /*static void matrixKNN (int[] knn) {
+    static void matrixKNNInLine (int[] knn) { //вариант вывода диапазона числе от 1до K в виде рядов
         double definitioninfloat = Math.sqrt(knn[0]);
         double definitioninfloatceil = Math.ceil(definitioninfloat);
         int definition=(int)definitioninfloatceil;
-        int k =1;
+        int k = knn[0];
+        int step =1;
         for (int row = 0; row < definition; row++) {
             for (int col = 0; col < definition; col++)
-                System.out.printf(" %3s ", k++);
+                if (k+1>step)
+                System.out.printf(" %3s ", step++);
             System.out.println();
         }
-    }*/
+    }
 
-    static void matrixKNN (int[] knn) {
+    static void matrixKNNInArray (int[] knn) {  //вариант вывода диапазона числе от 1до K в виде массива
         double definitioninfloat = Math.sqrt(knn[0]);
         double definitioninfloatceil = Math.ceil(definitioninfloat);
         int definition=(int)definitioninfloatceil;

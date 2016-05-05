@@ -53,7 +53,8 @@ public class Runner {
         }
 
         //2.
-        TaskB.matrixKNN(arrknm);
+        TaskB.matrixKNNInLine(arrknm);
+        TaskB.matrixKNNInArray(arrknm);
 
 
 

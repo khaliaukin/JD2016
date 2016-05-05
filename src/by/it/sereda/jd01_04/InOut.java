@@ -31,7 +31,14 @@ public class InOut {
             mas[i] = Double.parseDouble(elemString[i]);
         }
         return mas;
-    } //end stringLineToIntArray
+    } //end stringLineToArray
+
+
+
+
+
+
+
 
     /**
      * @param mas   входной массив

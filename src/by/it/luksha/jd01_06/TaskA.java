@@ -51,15 +51,16 @@ public class TaskA {
 
         StringBuilder text = new StringBuilder(Data.lykomorie);
 
-        Pattern pattern = Pattern.compile("^[Ё|У|Е|Ы|А|О|Э|Я|И|Ю|ё|у|е|ы|а|о|э|я|и|ю]+[а-яё]+[ё|у|е|ы|а|о|э|я|и|ю]+");
+        Pattern pattern = Pattern.compile("[\\s][ЁУЕЫАОЭЯИЮёуеыаоэяию][\\s]|[\\s][ЁУЕЫАОЭЯИЮёуеыаоэяию][а-я]*[ЁУЕЫАОЭЯИЮёуеыаоэяию]+[\\s]+");
         Matcher matcher = pattern.matcher(text);
 
         int count = 0;
         while (matcher.find())
         {
             count++;
+            System.out.println(matcher.group());
         }
 
-        System.out.println(count);
+        System.out.println("Слов: " + count);
     }
 }

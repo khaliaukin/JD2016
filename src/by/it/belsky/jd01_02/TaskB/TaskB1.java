@@ -47,7 +47,7 @@ public class TaskB1 {
         printArray2D1(matrixA);
     }
 }
-
+//TaskB1
 
 
 

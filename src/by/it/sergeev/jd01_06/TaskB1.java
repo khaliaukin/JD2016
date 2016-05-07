@@ -15,12 +15,12 @@ public class TaskB1 {
             {
                 count++;
                 System.out.print(m.group() + " ");
-                m.appendReplacement(sb, "___");
+                m.appendReplacement(sb, "___"); //добавление и замена
             }
         }
         System.out.println();
         System.out.println("Количество слов: " + count + '\n');
-        m.appendTail(sb);
+        m.appendTail(sb); //после appendReplacement добавления оставшейся части строки в sb
         System.out.println(sb);
     }
 }

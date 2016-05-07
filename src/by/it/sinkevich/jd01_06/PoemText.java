@@ -6,7 +6,7 @@ package by.it.sinkevich.jd01_06;
 class PoemText {
 
     private static final String POEMTEXT =
-            "Для вас, души моей царицы, \n" +
+                    "Для вас, души моей царицы, \n" +
                     "Красавицы, для вас одних \n" +
                     "Времен минувших небылицы, \n" +
                     "В часы досугов золотых, \n" +

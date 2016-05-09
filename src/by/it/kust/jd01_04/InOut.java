@@ -37,8 +37,6 @@ public class InOut {
                 System.out.printf(name + "[%1d,%1d]=%-6.1f ", i, j, m[i][j]);   //печатаем один элемент
             System.out.println();            // в конце столбца
         }
-        System.out.println();      //в конце массива выводится пустая строка
+        //System.out.println();      //в конце массива выводится пустая строка
     }
-
-
 }

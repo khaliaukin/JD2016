@@ -4,6 +4,9 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class TaskA {
+    /**
+     * В каждом слове текста буквы № 5-ю и 7-ю заменяет символом #. Для слов короче 5 корректировку не выполняет.
+     */
     public static void task1(){
         StringBuilder text = new StringBuilder(Data.lykomorie);
 
@@ -17,14 +20,14 @@ public class TaskA {
             int length = matcherText.group().length();
             int start = matcherText.start();
             text.setCharAt(start + 4, '#');
-            if (length > 6)
-            {
-                text.setCharAt(start + 6, '#');
-            }
+            if (length > 6) {text.setCharAt(start + 6, '#');}
         }
         System.out.println(text);
     }
 
+    /**
+     * Определяет, сколько раз повторяется в тексте каждое слово, которое встречается в нем.
+     */
     public static void task2(){
         String[] text = Data.lykomorie.split("[^а-яА-ЯЕё]+");
 
@@ -46,12 +49,15 @@ public class TaskA {
         }
     }
 
+    /**
+     * В стихотворении находит количество слов, начинающихся и заканчивающихся гласной буквой.
+     */
     public static void task3() {
         System.out.println("3. В стихотворении найти количество слов, начинающихся и заканчивающихся гласной буквой.");
 
         StringBuilder text = new StringBuilder(Data.lykomorie);
 
-        Pattern pattern = Pattern.compile("[\\s][ЁУЕЫАОЭЯИЮёуеыаоэяию][\\s]|[\\s][ЁУЕЫАОЭЯИЮёуеыаоэяию][а-я]*[ЁУЕЫАОЭЯИЮёуеыаоэяию]+[\\s]+");
+        Pattern pattern = Pattern.compile("(\\b([ЁУЕЫАОЭЯИЮёуеыаоэяию])([\\S]+?)[ЁУЕЫАОЭЯИЮёуеыаоэяию]\\b)|(\\b[ЁУЕЫАОЭЯИЮёуеыаоэяию]+?)\\b");
         Matcher matcher = pattern.matcher(text);
 
         int count = 0;

@@ -5,7 +5,8 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 
 /**
- * Created by Computer on 07.05.2016.
+ * Набор утилит для задания jd01_05.
+ * @author Sinkevich Denis
  */
 class Util {
 
@@ -14,11 +15,13 @@ class Util {
         String line = consoleReader.readLine();
         return Double.parseDouble(line);
     }
-    
-    static void printFunctionTable(double[][] matrix, String functionName) {
+    //Вывод результатов табулирования функции на консоль: double[][] matrix -- матрица состоящая из 2-х строк!!!
+    //Первая строка -- аргументы, вторая строка результат функции; String functionName -- название функции, int cols --
+    //количество колонок для вывода
+    static void printFunctionTable(double[][] matrix, String functionName, int cols) {
         for (int i = 0; i < matrix[0].length; i++) {
             System.out.printf("| %S[%3.1f]=%-7.2f |", functionName, matrix[0][i], matrix[1][i]);
-            if ((i + 1) % 6 == 0 || i == matrix[0].length - 1) {
+            if ((i + 1) % cols == 0 || i == matrix[0].length - 1) {
                 System.out.println();
             }
         }

@@ -6,15 +6,21 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 /**
- * Created by Sinkevich Denis on 06.05.2016.
+ * Задание А.
+ * @author Sinkevich Denis
  */
 class TaskA {
 
     String task1() {
+        //Создаём обект типа StringBuider, т.к. в нём будем изменять символы, а String для этого не подходит
         StringBuilder poem = new StringBuilder(PoemText.getPoemtext());
+        //Паттерн для поиска всех русских слов в текстке длиной больше 5
         Pattern pattern = Pattern.compile("[А-Яа-яЁё]{5,}");
+        //Matcher на основе нашего паттерна ищет все его вхождения в тексте
         Matcher matcher = pattern.matcher(PoemText.getPoemtext());
         while (matcher.find()) {
+            //После получения слова, с помощью методов .start и .end вычисляем длину слова и меняем нужные индексы
+            //в poem на '#'
             int startIndex = matcher.start();
             int endIndex = matcher.end();
             poem.setCharAt(startIndex + 4, '#');
@@ -28,11 +34,15 @@ class TaskA {
     }
 
     Map<String, Integer> task2() {
+        //Обратный паттерн для поиска слов, подходит для разбивания строки на слова
         Pattern pattern = Pattern.compile("[^А-Яа-яЁё]+");
         String[] words = pattern.split(PoemText.getPoemtext());
+        //Создаём словарь, где ключ -- это слово в тексте, а значение -- количество его повторений
         Map<String, Integer> wordsMap = new HashMap<>();
         for (String word : words) {
+            //Преобразовываем все слова в один регистр
             word = word.toLowerCase();
+            //Заполняем словарь
             if (wordsMap.containsKey(word)) {
                 wordsMap.put(word, wordsMap.get(word) + 1);
             } else {
@@ -47,9 +57,13 @@ class TaskA {
         return wordsMap;
     }
 
+    //Этот метод я решил реализовать так: сначала найти все слова в тексте, а уже потом проверять их на гласные
     int task3() {
+        //Делим текст на слова
         Pattern pattern = Pattern.compile("[^А-Яа-яЁё]+");
         String[] words = pattern.split(PoemText.getPoemtext());
+        //Паттерн который проверит слово на наличие гласных в начлае и в конце слова учитывая, что оно может состоять
+        //из одной гласной буквы
         pattern = Pattern.compile("^[АаЕеЁёИиОоУуЭэЮюЯя]([а-яё]*[аеёиоуыэюя]$)?");
         int count = 0;
         for (String word : words) {

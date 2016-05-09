@@ -1,7 +1,8 @@
 package by.it.sinkevich.jd01_06;
 
 /**
- * Created by Sinkevich Denis on 06.05.2016.
+ * Класс для хранения и получения текста стихотворения
+ * @author Sinkevich Denis
  */
 class PoemText {
 

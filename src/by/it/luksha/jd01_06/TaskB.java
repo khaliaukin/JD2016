@@ -25,13 +25,6 @@ public class TaskB {
     public static void task2() {
         System.out.println("2. Вывести все предложения заданного текста в порядке возрастания количества слов в каждом из них. В предложениях убрать переносы строк.");
 
-        /*String[] text = Data.lykomorie.split("\\n");
-        for (String element: text) {
-            System.out.println(element);
-            System.out.println("!");
-        }*/
-        //System.out.println(text);
-
         StringBuilder text = new StringBuilder(Data.lykomorie);
 
         //замена новой строки на пробел
@@ -46,11 +39,37 @@ public class TaskB {
         }
         System.out.println(text);
 
-        String[] arrayOfText = text.toString().split("[\\.]{1}?");
-        for (String element: arrayOfText) {
-            System.out.println(element);
-            System.out.println("!");
+        //разбиение строки на массив предложений и вывод в консоль
+        String[] arrayOfText = text.toString().split("([\\.]{1}\\s)|(! )|\\?\\s");
+        System.out.println("До сортировки:");
+        int k = 1;
+        for (String element: arrayOfText)
+        {
+            System.out.println(k + ". " + element);
+            k++;
         }
 
+        //сортировка предложений по кол-ву слов
+        for (int i = 0; i < arrayOfText.length;  i++) {
+            for (int j = 0; j < arrayOfText.length - 1; j++) {
+                String[] arrJ = arrayOfText[j].split("( - )|( )");
+                String[] arrJ1 = arrayOfText[j+1].split("( - )|( )");
+                if( arrJ.length > arrJ1.length ){
+                    String tmp = arrayOfText[j];
+                    arrayOfText[j] = arrayOfText[j+1];
+                    arrayOfText[j+1] = tmp;
+                }
+            }
+        }
+
+
+        //вывод в консоль после сортировки
+        System.out.println("После сортировки:");
+        k = 1;
+        for (String element: arrayOfText)
+        {
+            System.out.println(k + ". " + element);
+            k++;
+        }
     }
 }

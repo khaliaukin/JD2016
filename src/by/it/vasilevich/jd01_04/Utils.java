@@ -87,4 +87,10 @@ public class Utils {
 //        InOut.arrayOne(x,"X",1);
 //        InOut.arrayDouble(Utils.arrayMulVector(m,x), "yy", 4);
     }
+
+    public static void printArray(double[]arr,String x){
+        System.out.println();
+        for (int i=0;i<arr.length;i++)
+            System.out.println(x+"["+i+"]="+arr[i]);
+    }
 }

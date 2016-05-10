@@ -31,7 +31,7 @@ public class Main {
                 for (int j = 0; j < mm[0].length; j++)
                         mm[i][j] = m[i][j];
 
-        //TaskA, TaskB: вектор-решение X и детерминант
+        //TaskA1, TaskB: вектор-решение X и детерминант
         double[] x = Utils.findRoot(m, y, false);
         System.out.println("Находим корни X:");
         InOut.arrayPrint(x, "X", x.length);

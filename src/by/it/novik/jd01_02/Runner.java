@@ -14,7 +14,7 @@ public class Runner {
     public static void main(String[] args) throws IOException {
 
         /**
-         * Создание объекта класса TaskA
+         * Создание объекта класса TaskA1
          */
         TaskA taskA=new TaskA();
 

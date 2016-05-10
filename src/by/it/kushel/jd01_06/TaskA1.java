@@ -6,14 +6,15 @@ import java.util.regex.*;
  * Created by Diomn on 09.05.2016.
  */
 
-public class TaskA {
+public class TaskA1
+{
     public static void main(String[] arg) {
         Pattern pat;
         Matcher mat;
         boolean found;
 
         String str = new String(Data.lukomor);
-pat =Pattern.compile("(^|[^А-яа-я])([А-Яа-я]{5,})");
+pat =Pattern.compile("(^|[^А-яа-яЁё])([А-Яа-яЁё]{5,})");
         mat=pat.matcher(str);
         char[] masStr=str.toCharArray();
         while(mat.find()) {

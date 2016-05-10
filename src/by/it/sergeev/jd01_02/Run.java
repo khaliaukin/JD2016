@@ -41,9 +41,12 @@ public class Run {
          *  рекомендуемые 2 -9 10
          */
         System.out.println("Находеним корни квадратного уравнения по формуле ax^2 + bx + c = 0, a != 0");
-        int a = Integer.parseInt(args[0]);
-        int b = Integer.parseInt(args[1]);
-        int c = Integer.parseInt(args[2]);
+        // a = Integer.parseInt(args[0]);
+        //int b = Integer.parseInt(args[1]);
+        //int c = Integer.parseInt(args[2]);
+        int a = 2;
+        int b = -9;
+        int c = 10;
         // D = (b * b) - (4 * a * c);
         // 2 корня: D > 0 - 2 корня; 1 корень: D = 0; Нет корне: D < 0.
         if (((b * b) - (4 * a * c)) < 0) {
@@ -92,14 +95,12 @@ public class Run {
         //C
         int[][] array = TaskC.randomArray();
         TaskC.printArray(array);
-
+        System.out.println("Сумма между 1-м и 2-м положительными элементами:");
+        TaskC.sumElements();
         TaskC.transpone();
 
-        //C 1.test
-        //System.out.println(TaskC.sumBetweenPositiveOfArray(array));
+        TaskC.rotate();
 
-        //C 2.test
-        //System.out.println(TaskC.transpone(array));
 
     }
 }

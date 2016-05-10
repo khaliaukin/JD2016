@@ -20,10 +20,19 @@ class Util {
     //количество колонок для вывода
     static void printFunctionTable(double[][] matrix, String functionName, int cols) {
         for (int i = 0; i < matrix[0].length; i++) {
-            System.out.printf("| %S[%3.1f]=%-7.2f |", functionName, matrix[0][i], matrix[1][i]);
+            System.out.printf("| %S[%-4.1f]=%-7.2f |", functionName, matrix[0][i], matrix[1][i]);
             if ((i + 1) % cols == 0 || i == matrix[0].length - 1) {
                 System.out.println();
             }
+        }
+    }
+    //Вывод одномерного массива для задание номер 6
+    static void printFunctionForTask6(double[] array, String arrayName) {
+        System.out.println("━━━━━━━━━━━━━━━━━━━━");
+        System.out.println("Array : " + arrayName + ".");
+        System.out.println("━━━━━━━━━━━━━━━━━━━━");
+        for (int index = 0; index < array.length; index++){
+            System.out.println(String.format("%-1s%-1s%-1s%3s%-20s", "[", index, "]", "= ", array[index]));
         }
     }
 }

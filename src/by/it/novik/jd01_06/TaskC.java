@@ -18,21 +18,20 @@ public class TaskC {
     public void alignLines() {
         System.out.println("Выполнить форматирование с выравниванием по обоим краям.");
         Data data = new Data(); //Создаем объект с полем для хранения стихотворения
-        StringBuilder poem = data.getLukomor(); //Вызываем метод для получения поля lukomor
-        String poemS = poem.toString();
-        String[] lines = poemS.split("\\n");
-        int max = 0;
-        for (String line : lines) {
-            if (max < line.length()) {
-                max = line.length();
+        String poem = data.getPoem(); //Вызываем метод для получения поля poem
+        String[] lines = poem.split("\\n"); //Разбиваем по переводу строки весь текст
+        int maxLine = 0; //Максимальная длина строки
+        for (String line : lines) { //Вычисление максимальной строки в тексте
+            if (maxLine < line.length()) {
+                maxLine = line.length();
             }
         }
         for (String line : lines) {
-            String[] words = line.split("\\s");
-            int n = max - line.length();
-            int k = n / (words.length - 1);
+            String[] words = line.split("\\s"); //Разбиение строки на массив слов
+            int n = maxLine - line.length(); //Вычисляем количество нехватающих пробелов
+            int k = n / (words.length - 1); //Целая часть при делении укажет, нколичество вставляемых пробелов между всеми словами в строке
             String l = "";
-            int d = n % (words.length - 1);
+            int d = n % (words.length - 1); //Указывает между сколькими словами нужно добавить еще по пробелу
             String spacesLine = " ";
             for (int i = 0; i < k; i++) {
                 spacesLine += " ";
@@ -56,16 +55,15 @@ public class TaskC {
      *Слова через пробел. Последнее слово нужно подобрать по длине.
      * @return Скорость выполнения программы в мс
      */
- /*   public long randomWordsFirst () {
+    public long randomWordsFirst () {
         System.out.println("Получение строки ровно (!) в в миллион символов из случайных слов стихотворения.");
         Data data = new Data(); //Создаем объект с полем для хранения стихотворения
-        StringBuilder poem = data.getLukomor(); //Вызываем метод для получения поля lukomor
-        String poemS = poem.toString();
-        String[] words = poemS.split("[^а-яА-ЯёЁ]+");
+        String poem = data.getPoem(); //Вызываем метод для получения поля poem
+        String[] words = poem.split("[^а-яА-ЯёЁ]+");
         String line = "";
         String space = " ";
         int limit = 1000000;
-        long start=System.currentTimeMillis();
+        long start=System.currentTimeMillis(); //Начальное время выполнения
         int i = 0;
         while (line.length() < limit) {
             Random r = new Random();
@@ -88,11 +86,11 @@ public class TaskC {
                 line = line.concat(wRand);
             }
             i++;
-            if(i % 100 == 0) {
-                System.out.println("Part length: " + line.length());
-            }
+            //if(i % 100 == 0) {
+            //    System.out.println("Part length: " + line.length());
+            //}
         }
-        System.out.println(line + ",  \n"  + "Метод1 " + line.length() + "  " + (System.currentTimeMillis()-start));
+        System.out.println(line + ",  \n"  + "Метод1 " + line.length() + "  " + (System.currentTimeMillis()-start) + "мс");
 return System.currentTimeMillis()-start;
     }
 
@@ -101,12 +99,11 @@ return System.currentTimeMillis()-start;
      *Слова через пробел. Последнее слово нужно подобрать по длине.
      * @return Скорость выполнения программы в мс
      */
- /*   public long randomWordsSecond () {
+    public long randomWordsSecond () {
         System.out.println("Получение строки ровно (!) в в миллион символов из случайных слов стихотворения.");
         Data data = new Data(); //Создаем объект с полем для хранения стихотворения
-        StringBuilder poem = data.getLukomor(); //Вызываем метод для получения поля lukomor
-        String poemS = poem.toString();
-        String[] words = poemS.split("[^а-яА-ЯёЁ]+");
+        String poem = data.getPoem(); //Вызываем метод для получения поля lukomor
+        String[] words = poem.split("[^а-яА-ЯёЁ]+");
         StringBuilder line = new StringBuilder(1000000);
         String space = " ";
         int limit = 1000000;
@@ -137,10 +134,10 @@ return System.currentTimeMillis()-start;
            //     System.out.println("Part length: " + line.length());
            // }
         }
-        System.out.println(line + ",  \n" + "Метод2 " + line.length() + "  " + (System.currentTimeMillis()-start));
+        System.out.println(line + ",  \n" + "Метод2 " + line.length() + "  " + (System.currentTimeMillis()-start)+ "мс");
 return System.currentTimeMillis()-start;
     }
-*/
+
 
     /**
      * Сортировка слов текста в порядке убывания их длин, все слова одинаковой длины - в порядке возрастания в них количества гласных букв.
@@ -149,24 +146,23 @@ return System.currentTimeMillis()-start;
     public void sortDescendingLengthOfWords() {
         System.out.println("Сортировка слов текста в порядке убывания их длин, при == - в порядке возрастания кол-ва гласных букв, группировка одинаковых слов.");
         Data data = new Data(); //Создаем объект с полем для хранения стихотворения
-        StringBuilder poem = data.getLukomor(); //Вызываем метод для получения поля lukomor
-        String poemS = poem.toString();
-        String[] words = poemS.split("[^а-яА-ЯёЁ]+");
-        Map<String, Integer> repeats = new HashMap<>();
+        String poem = data.getPoem(); //Вызываем метод для получения поля poem
+        String[] words = poem.split("[^а-яА-ЯёЁ]+");
+        Map<String, Integer> repeats = new HashMap<>(); //Создаем Map для хранения одинаковых слов (ключ-слово, value-количество повторений)
         for (int i = 0; i < words.length - 1; i++) {
-            if (!words[i].isEmpty()) {
+            if (!words[i].isEmpty()) { //Если нет пустых значений
 
                 for (int j = i + 1; j < words.length; j++) {
                     if (!words[i].equalsIgnoreCase(words[j])) {
-                        if (words[i].length() != words[j].length()) {
+                        if (words[i].length() != words[j].length()) { //Пузырьковая сортировка по длине
                             if (words[i].length() < words[j].length()) {
                                 String temp = words[i];
                                 words[i] = words[j];
                                 words[j] = temp;
                             }
                         } else {
-                            int countI = 0;
-                            int countJ = 0;
+                            int countI = 0; //Количество гласных букв в первом слове
+                            int countJ = 0; //Количество гласных букв во втором слове
                             Pattern p = Pattern.compile("[яыуаиеоюэЯЫУАИЕОЮЭ]");
                             Matcher m = p.matcher(words[i]);
                             while (m.find()) {
@@ -176,15 +172,15 @@ return System.currentTimeMillis()-start;
                             while (m.find()) {
                                 countJ++;
                             }
-                            if (countI > countJ) {
+                            if (countI > countJ) { //Сравнивает слова по количеству гласных букв
                                 String temp = words[i];
                                 words[i] = words[j];
                                 words[j] = temp;
                             }
                         }
                     } else {
-                        words[j] = "";
-                        if (repeats.containsKey(words[i])) {
+                        words[j] = ""; //Если слова равны, то заменяем на пустое повторяющееся слово
+                        if (repeats.containsKey(words[i])) { //Проверка на наличие повторяющегося слова в Map
                             repeats.put(words[i], repeats.get(words[i]) + 1);
                         } else {
                             repeats.put(words[i], 2);
@@ -197,15 +193,15 @@ return System.currentTimeMillis()-start;
         }
         System.out.println("Отсортированные слова");
         int col = 1;
-        for (String word : words) {
-            if (!word.isEmpty()) {
-                if (repeats.containsKey(word)) {
+        for (String word : words) { //Вывод отсортированных слов
+            if (!word.isEmpty()) { //Не выводим пустые значения
+                if (repeats.containsKey(word)) {//Если слово для вывода содержится в Map, то выводим его с количеством повторений
                     System.out.print(word.concat("(").concat(repeats.get(word).toString()).concat(") "));
                 } else {
                     System.out.print(word.concat(" "));
                 }
                 col++;
-                if (col % 16 == 0) {
+                if (col % 16 == 0) { //Вывод слов в 16 колонок
                     System.out.println("");
                 }
             }

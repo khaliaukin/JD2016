@@ -4,10 +4,10 @@ package by.it.novik.jd01_06;
  * Created by Катя.
  */
 public class Data {
-    private String lukomor;
+    private String poem;
 
     public Data () {
-        this.lukomor =  "У лукоморья дуб зелёный;\n" +
+        this.poem =  "У лукоморья дуб зелёный;\n" +
                         "Златая цепь на дубе том:\n" +
                         "И днём и ночью кот учёный\n" +
                         "Всё ходит по цепи кругом;\n" +
@@ -41,10 +41,10 @@ public class Data {
                         "Под ним сидел, и кот учёный\n" +
                         "Свои мне сказки говорил.";
     }
-    public StringBuilder getLukomor (){
-        return new StringBuilder (this.lukomor);
+    public String getPoem (){
+        return this.poem;
     }
-    public void setLucomor(String lukomor){
-        this.lukomor=lukomor;
+    public void setPoem(String poem){
+        this.poem=poem;
     }
 }

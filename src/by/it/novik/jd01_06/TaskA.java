@@ -14,7 +14,7 @@ public class TaskA {
      */
     public void replaceCharInPoem() {
         Data data = new Data(); //Создаем объект с полем для хранения стихотворения
-        StringBuilder poem = data.getLukomor(); //Вызываем метод для получения поля lukomor
+        StringBuilder poem = new StringBuilder(data.getPoem()); //Вызываем метод для получения поля lukomor
         String regx = "[а-яА-ЯёЁ]{5,}";
         Pattern pat = Pattern.compile(regx);
         Matcher mat = pat.matcher(poem);
@@ -36,10 +36,10 @@ public class TaskA {
      */
     public void repeatWords() {
         Data data = new Data(); //Создаем объект с полем для хранения стихотворения
-        StringBuilder poem = data.getLukomor(); //Вызываем метод для получения поля lukomor
-        String poemS = poem.toString();
+        String poem = data.getPoem(); //Вызываем метод для получения поля lukomor
+       // String poemS = poem.toString();
         String regx = "[^а-яА-ЯёЁ]+";
-        String[] arrayWords = poemS.split(regx);
+        String[] arrayWords = poem.split(regx);
         long start = System.currentTimeMillis();
         for (int i = 0; i < arrayWords.length; i++) {
             if (!arrayWords[i].isEmpty()) {
@@ -55,7 +55,8 @@ public class TaskA {
             }
         }
         System.out.println("Затрачено времени: " + (System.currentTimeMillis() - start) + " ms");
-        String[] arrayWords2 = poemS.split(regx);
+       //Второй способ решения и вычисление времени, затраченного на него
+        String[] arrayWords2 = poem.split(regx);
         Map<String, Integer> repeats = new HashMap<>();
         start = System.currentTimeMillis();
         for(String word: arrayWords2){
@@ -74,14 +75,13 @@ public class TaskA {
      */
     public void countWordsWithVowel (){
         Data data = new Data(); //Создаем объект с полем для хранения стихотворения
-        StringBuilder poem = data.getLukomor(); //Вызываем метод для получения поля lukomor
+        StringBuilder poem = new StringBuilder(data.getPoem()); //Вызываем метод для получения поля lukomor
         String regx = "(^|[^а-яА-ЯёЁ]+)([яыуаиеоюэЯЫУАИЕОЮЭ])([а-яА-ЯёЁ]*[яыуаиеоюэЯЫУАИЕОЮЭ]|)[^а-яА-ЯёЁ]+";
         Pattern pat = Pattern.compile(regx);
         Matcher mat = pat.matcher(poem);
         int count=0;
         while (mat.find()) {
-            String res = mat.group();
-                    count++;
+                count++;
           }
         System.out.println("Количество слов, начинающихся и заканчивающихся гласной буквой count=" + count);
         }

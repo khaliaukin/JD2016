@@ -55,13 +55,13 @@ public class Run {
          * Сложить из случайных слов стихотворения строку ровно (!) в в миллион символов путем конкатенации.
          * Слова через пробел. Последнее слово нужно подобрать по длине. Сделать со String и StringBuilder, вывести выйгрыш во времени.
          */
-     /*   System.out.println("");
+        System.out.println("");
         long timeWork1 = taskC.randomWordsFirst();
         System.out.println("");
         long timeWork2 = taskC.randomWordsSecond();
         long win = TimeUnit.MILLISECONDS.toMicros(timeWork1-timeWork2);
         System.out.println("Выйгрыш в скорости равен " + win + "мкс");
-        */
+
         /**
          * Все слова текста рассортировать в порядке убывания их длин, при этом все слова одинаковой длины рассортировать в порядке возрастания в них количества гласных букв.
          * Одинаковые слова сгруппировать и выводить один раз с числом их повторов в тексте. Регистр неважен.

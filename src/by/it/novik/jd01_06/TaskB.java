@@ -15,7 +15,7 @@ public class TaskB {
    /* //2-й способ решения
         public void deleteWords (){
         Data data = new Data(); //Создаем объект с полем для хранения стихотворения
-        StringBuilder poem = data.getLukomor(); //Вызываем метод для получения поля lukomor
+        StringBuilder poem = new StringBuilder (data.getPoem()); //Вызываем метод для получения поля lukomor
         String regx="[а-яА-ЯёЁ]+";
         Pattern p =Pattern.compile(regx);
         Matcher m=p.matcher(poem);
@@ -36,12 +36,12 @@ public class TaskB {
 */
     public void deleteWords() {
         Data data = new Data(); //Создаем объект с полем для хранения стихотворения
-        StringBuilder poem = data.getLukomor(); //Вызываем метод для получения поля lukomor
+        StringBuilder poem = new StringBuilder(data.getPoem()); //Вызываем метод для получения поля lukomor
         String regx = "(^|[^а-яА-ЯёЁ]+)([абвгджзклмнпрстфхцчшщАБВГДЖЗКЛМНПРСТФХЦЧШЩ][а-яА-ЯёЁ]{4})[^а-яА-ЯёЁ]+";
         Pattern p = Pattern.compile(regx);
         Matcher m = p.matcher(poem);
         while (m.find()) {
-            poem.delete(m.start(2), m.end(2));//удаляем слово длиной 5
+            poem.delete(m.start(2), m.end(2));//удаляем слово длиной 5 (2-я группа в регулярке)
             m.reset(); //Перезагружаем matcher для подхвата новой строки
 
         }
@@ -54,7 +54,7 @@ public class TaskB {
      */
     public void outputTextSortUpCountOfWords() {
         Data data = new Data(); //Создаем объект с полем для хранения стихотворения
-        StringBuilder poem = data.getLukomor(); //Вызываем метод для получения поля lukomor
+        StringBuilder poem = new StringBuilder(data.getPoem()); //Вызываем метод для получения поля lukomor
         String regx = "[а-яА-ЯёЁ:;,\\s-]+(\\.\\.\\.)?[а-яА-ЯёЁ:;,\\s-]+[\\.?!](\\s|$)";
         Pattern p = Pattern.compile(regx);
         Matcher m = p.matcher(poem);
@@ -103,10 +103,9 @@ public class TaskB {
      */
     public void sortDescendingAmountCharactersInWord(char key) {
         Data data = new Data(); //Создаем объект с полем для хранения стихотворения
-        StringBuilder poem = data.getLukomor(); //Вызываем метод для получения поля lukomor
-        String poemS = poem.toString();
+        String poem = data.getPoem(); //Вызываем метод для получения поля lukomor
         String regx = "[^а-яА-ЯёЁ]+";
-        String[] arrayWords = poemS.split(regx);
+        String[] arrayWords = poem.split(regx);
         String min;
         int count_first;
         int count_second;
@@ -152,6 +151,7 @@ public class TaskB {
             col++;
 
         }
+        System.out.println("");
 
     }
 

@@ -16,5 +16,15 @@ public class Runner {
 
         //4
         Task4.multiply();
+
+        //5
+        Task5.calculate();
+
+        //6
+        double[] array = Task6.createArray();
+        Task6.printArray(array, "ARRAY");
+        double[] arrayNew = Task6.selectedNewElement(array);
+        Task6.printArray(arrayNew, "ARRAX");
+        System.out.println("Количествоэлементов с четным индексом - "+Task6.calcEven(arrayNew));
     }
 }

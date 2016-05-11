@@ -7,8 +7,13 @@ public class Runner {
         TaskA.task2();
         TaskA.task3();
 
-        //TaskB.task1();
+        TaskB.task1();
         TaskB.task2();
         TaskB.task3("о");
+
+
+
+
+
     }
 }

@@ -13,5 +13,8 @@ public class Runner {
 
         //3
         Task3.createTable(3.67, -10, 1, 1.25);
+
+        //4
+        Task4.multiply();
     }
 }

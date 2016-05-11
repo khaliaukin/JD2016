@@ -18,9 +18,9 @@ public class TaskB {
 
         while (matcher.find())
         {
-            System.out.println(matcher.group());
             int start = matcher.start();
             text.delete(start, start+6);
+            matcher.reset();
         }
 
         System.out.println(text);
@@ -88,7 +88,7 @@ public class TaskB {
         System.out.println("3. Отсортировать слова в тексте по убыванию количества вхождений заданного символа, а в случае равенства — по алфавиту.");
 
         //разбивание строки с текстом на массив строк со словами
-        String[] words = Data.lykomorie.split("( )|(\\s-\\s+)|(\\p{Punct}+\\s)|(\\n)");
+        String[] words = Data.lykomorie.split("[^а-яА-ЯЁё]+");
 
         //переводим все символы слов в нижний регистр
         System.out.println("До сортировки:");

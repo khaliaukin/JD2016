@@ -18,7 +18,7 @@ public class Task7 {
             arrayA[i]=(int)round(random()*348+103);
         }
         printArrayA(arrayA);
-    return arrayA;
+        return arrayA;
     }
 
     /**
@@ -48,10 +48,10 @@ public class Task7 {
         int row=round(array.length/5); //Минимальное количество строк вывода массива при максимум 5 столбцов
         System.out.println("Массив B");
         for (int i=0;i<row;i++){
-        for (int j=i;j<5*row;j+=row) {
-            if (j > array.length - 1) break;
-            System.out.format("B[%-2d]=%-8d", j, array[j]);
-        }
+            for (int j=i;j<5*row;j+=row) {
+                if (j > array.length - 1) break;
+                System.out.format("B[%-2d]=%-8d", j, array[j]);
+            }
             System.out.println("");
         }
         System.out.println("");
@@ -65,13 +65,13 @@ public class Task7 {
         int count=0;
         for(int i=0;i<arrayA.length;i++){
             if(0.1*arrayA[i]>i){
-            count++;
-        }}
+                count++;
+            }}
         int[] arrayB=new int[count];
         for(int i=0,j=0;i<arrayA.length;i++){
             if(0.1*arrayA[i]>i){
-            arrayB[j]=arrayA[i];
-            j++;}
+                arrayB[j]=arrayA[i];
+                j++;}
         }
         sortUpArray(arrayB);//Сортировка массива по возрастанию
         printArrayB(arrayB);
@@ -92,6 +92,7 @@ public class Task7 {
             }
         }
     }
+
 
 
 

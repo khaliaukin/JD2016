@@ -15,18 +15,18 @@ public class Utils {
 
         for (int i = 0; i < mas.length - 1; i++)
 
-            for (int j = i + 1; j < mas.length; j++)
+            for (int j = i; j < mas.length - 1; j++)
 
-                if ((upDirection && mas[i] > mas[j]) ||
+                if ((upDirection && mas[j] > mas[j+1]) ||
 
-                        (!upDirection && mas[i] < mas[j]))
+                        (!upDirection && mas[j] < mas[j+1]))
 
                 {
-                    double m = mas[i];
+                    double m = mas[j];
 
-                    mas[i] = mas[j];
+                    mas[j] = mas[j+1];
 
-                    mas[j] = m;
+                    mas[j+1] = m;
                 }
 
         return mas;

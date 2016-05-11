@@ -50,5 +50,5 @@ public class InOut {
 //        System.out.println(mA);
     }
     double[] vectorY = {1,14,32,23};
-    Utils.printArray(vectorY,"x");
+//    Utils.printArray(vectorY,"x");
 }

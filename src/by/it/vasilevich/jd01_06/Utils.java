@@ -38,4 +38,12 @@ public class Utils {
                     "У моря видел дуб зелёный;\n" +
                     "Под ним сидел, и кот учёный\n" +
                     "Свои мне сказки говорил.";
+
+    public static boolean Otbor (String line){
+        String a = "аеёиоуыэюя";
+        a = a+a.toUpperCase();
+        char start = (line.charAt(0));
+        char end = (line.charAt(line.length()-1));
+        return (a.indexOf(start)>=0 && a.indexOf(end)>=0);
+    }
 }

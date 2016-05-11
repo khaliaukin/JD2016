@@ -74,7 +74,7 @@ public class InOut {
      */
     public  static  void  arrayPrint2D(double[][] mas){
         for(int i=0; i<mas.length; i++){
-            for(int j =0; j<mas.length; j++){
+            for(int j =0; j<mas[i].length; j++){
                 System.out.printf("%6.2f", mas[i][j]);
 
             }

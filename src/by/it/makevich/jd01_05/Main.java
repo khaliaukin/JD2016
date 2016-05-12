@@ -40,5 +40,27 @@ public class Main {
 		System.out.println("━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━");
 		System.out.println("Задание 4:");
 		System.out.println(Task4.calculate(2.408));
+
+		/**
+		 * Задание 5
+		 */
+		System.out.println("━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━");
+		System.out.println("Задание 5");
+		Task5.calculate();
+
+		/**
+		 * Задание 6
+		 */
+		System.out.println("━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━");
+		System.out.println("Задание 6");
+		double[] array=Task6.getArray();
+		Task6.printArray(array,"testname");
+		int count=Task6.count(array);
+		double[] newArray=Task6.newArray(array, count);
+		System.out.println();
+		System.out.println("━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━");
+		Task6.printArray(newArray,"Новый массив чисел имеющих нечетный индекс в массиве testname");
+		double increase=Task6.toIncrease(newArray);
+		System.out.println("Произведение всех чисел массива: "+increase);
 	}
 }

@@ -10,9 +10,9 @@ Double y=(sin(pow(PI/8-f,2))+pow(3+pow(x,2),1/4))/2;
 	public static double[] in(){
 		Scanner scan= new Scanner(System.in);
 		System.out.print("x=");
-		double numberX=scan.nextInt();
+		double numberX=scan.nextDouble();
 		System.out.print("f=");
-		double numberF=scan.nextInt();
+		double numberF=scan.nextDouble();
 	double[]numbers=new double[2];
 		numbers[0]=numberX;
 		numbers[1]=numberF;

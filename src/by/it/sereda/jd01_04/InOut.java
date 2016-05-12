@@ -60,6 +60,7 @@ public class InOut {
 
 
 
+
     /**
      * @param mas   входной массив
      * @param name  имя на экране

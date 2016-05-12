@@ -6,6 +6,7 @@ import java.io.InputStreamReader;
 
 /**
  * Набор утилит для задания jd01_05.
+ *
  * @author Sinkevich Denis
  */
 class Util {
@@ -15,6 +16,7 @@ class Util {
         String line = consoleReader.readLine();
         return Double.parseDouble(line);
     }
+
     //Вывод результатов табулирования функции на консоль: double[][] matrix -- матрица состоящая из 2-х строк!!!
     //Первая строка -- аргументы, вторая строка результат функции; String functionName -- название функции, int cols --
     //количество колонок для вывода
@@ -26,12 +28,13 @@ class Util {
             }
         }
     }
+
     //Вывод одномерного массива для задание номер 6
     static void printFunctionForTask6(double[] array, String arrayName) {
         System.out.println("━━━━━━━━━━━━━━━━━━━━");
         System.out.println("Array : " + arrayName + ".");
         System.out.println("━━━━━━━━━━━━━━━━━━━━");
-        for (int index = 0; index < array.length; index++){
+        for (int index = 0; index < array.length; index++) {
             System.out.println(String.format("%-1s%-1s%-1s%3s%-20s", "[", index, "]", "= ", array[index]));
         }
     }

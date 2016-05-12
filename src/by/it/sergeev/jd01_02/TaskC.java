@@ -1,11 +1,10 @@
 package by.it.sergeev.jd01_02;
 
-import com.sun.org.apache.xpath.internal.SourceTree;
-
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.Random;
+import java.util.logging.Formatter;
 
 public class TaskC {
     static int N;
@@ -83,5 +82,32 @@ public class TaskC {
         }
         System.out.println("90 градусов: ");
         printArray(matrix);
+    }
+
+    public static void subtractionAverageMatrix()
+    {
+
+        double averagemat = averageMatrix();
+
+        System.out.println("Среднее арифметическое:");
+        System.out.printf("%6.2f",averagemat);
+        System.out.println("\nМатрица с вычитанием среднего арифметического:");
+        for (int[] x : matrix) {
+            for (int a : x) {
+                double m = a - averagemat;
+                System.out.printf("%6.2f", m);
+            }
+            System.out.println("");
+        }
+    }
+    public static double averageMatrix() {
+        double average = 0;
+        for (int[] i : matrix) {
+            for (int j : i) {
+                average += j;
+            }
+        }
+        average = average/N;
+        return average;
     }
 }

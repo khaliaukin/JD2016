@@ -9,16 +9,14 @@ public class TaskB3 {
         BufferedReader r = new BufferedReader(new InputStreamReader(System.in));
         String n = r.readLine();
 
-        char[] chars = n.toCharArray();
-
         StringBuilder text = new StringBuilder(Pushkin.getString().toLowerCase());
         String[] mastext = text.toString().trim().split(" ");
         int arr[] = new int[mastext.length]; //создаём массив с словами.
         for (int i = 0; i <= mastext.length; i++) {
             int t = 0;
-            String letter[] = mastext[i].split("[^а-яё]+"); //массив с буквами.
+            String letter[] = mastext[i].split("[а-яё]+"); //массив с буквами.
             for (int j = 0; j <= letter.length; j++) {
-                if (letter[j] == chars.toString()) {
+                if (letter[j] == n.toString()) {
                     t++;
                 }
                 arr[j] = t;

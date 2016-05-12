@@ -1,5 +1,6 @@
 package by.it.luksha.jd01_05;
 
+import by.it.luksha.jd01_05.Math_var7.Task7;
 import by.it.luksha.jd01_05.Math_var7.*;
 
 public class Runner {
@@ -26,5 +27,12 @@ public class Runner {
         double[] arrayNew = Task6.selectedNewElement(array);
         Task6.printArray(arrayNew, "ARRAX");
         System.out.println("Количествоэлементов с четным индексом - "+Task6.calcEven(arrayNew));
+
+        //7
+        double[] cos = Task7.createCosArray();
+        double[] newCos = Task7.sortArray(cos);
+        Task7.printArrayC(cos);
+        System.out.println();
+        Task7.printArrayB(newCos);
     }
 }

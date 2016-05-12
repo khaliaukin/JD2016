@@ -5,7 +5,7 @@ package by.it.kust.jd01_04;
  */
 public class Utils {
     /**
-     * TaskA: Поиск корней СЛАУ (метод Жордана-Гаусса)
+     * TaskA1: Поиск корней СЛАУ (метод Жордана-Гаусса)
      * @param mA исходная матрица
      * @param mY исходный вектор
      * @param showSteps показ

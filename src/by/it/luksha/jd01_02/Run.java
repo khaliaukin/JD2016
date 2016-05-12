@@ -5,7 +5,7 @@ import java.io.IOException;
 public class Run {
     public static void main(String[] args) throws IOException {
 
-        //TaskA
+        //TaskA1
         System.out.println("                                                                            Task A...");
         //String line = Util.getLine();
         String line = "123 654 44 789456 12 3579 555 1";

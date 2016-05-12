@@ -20,7 +20,7 @@ public class Runner {
 
         TaskA.nLessOfMean(line);
 
-        /*TaskA.nWithDiffCharacter(line);*/
+        /*TaskA1.nWithDiffCharacter(line);*/
 
     }
 

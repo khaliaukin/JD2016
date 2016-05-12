@@ -27,5 +27,13 @@ public class MathRunner {
         System.out.println();
         //Задание 4
         taskA.task4();
+        System.out.println();
+        //Задание 5
+        TaskB taskB = new TaskB();
+        taskB.task1();
+        System.out.println();
+        //Задание 6
+        taskB.task2();
+        System.out.println();
     }
 }

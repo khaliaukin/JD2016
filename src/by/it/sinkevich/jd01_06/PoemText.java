@@ -2,6 +2,7 @@ package by.it.sinkevich.jd01_06;
 
 /**
  * Класс для хранения и получения текста стихотворения
+ *
  * @author Sinkevich Denis
  */
 class PoemText {

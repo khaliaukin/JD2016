@@ -83,7 +83,7 @@ class TaskA {
             yfunca[1][index] = y;
             index++;
         }
-        System.out.println("Рещультат задания №4: ");
+        System.out.println("Результат задания №4: ");
         Util.printFunctionTable(yfunca, "y", 6);
     }
 }

@@ -7,6 +7,7 @@ import java.util.regex.Pattern;
 
 /**
  * Задание А.
+ *
  * @author Sinkevich Denis
  */
 class TaskA {
@@ -62,7 +63,7 @@ class TaskA {
         //Делим текст на слова
         Pattern pattern = Pattern.compile("[^А-Яа-яЁё]+");
         String[] words = pattern.split(PoemText.getPoemtext());
-        //Паттерн который проверит слово на наличие гласных в начлае и в конце слова учитывая, что оно может состоять
+        //Паттерн который проверит слово на наличие гласных в начале и в конце слова учитывая, что оно может состоять
         //из одной гласной буквы
         pattern = Pattern.compile("^[АаЕеЁёИиОоУуЭэЮюЯя]([а-яё]*[аеёиоуыэюя]$)?");
         int count = 0;

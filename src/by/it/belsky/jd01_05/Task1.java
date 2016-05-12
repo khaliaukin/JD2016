@@ -24,8 +24,9 @@ public class Task1 {
     public static double variantB(double z) {
         double x = 3.24;
         double a = 5.8;
-       z = atan(pow(x, 2)) - sqrt(x + pow(1.43, 3)) + pow(cos(PI / (2 * a)), 3) / abs(x - pow(a, 0.2));
+        z = atan(pow(x, 2)) - sqrt(x + pow(1.43, 3)) + pow(cos(PI / (2 * a)), 3) / abs(x - pow(a, 0.2));
         return z;
     }
+
 
 }

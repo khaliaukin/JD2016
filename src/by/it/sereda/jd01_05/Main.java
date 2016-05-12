@@ -1,11 +1,13 @@
 package by.it.sereda.jd01_05;
 import by.it.sereda.jd01_05.math.*;
 
+import java.io.IOException;
+
 public class Main {
     //пример решения задачек по модулю Math (уровни A и B)
 //это реальный образец работы студентов прошлых выпусков JD01
 //вы можете реализовать свой вариант примерно таким же образом
-        public static void main(String[] args) {
+        public static void main(String[] args) throws IOException {
             // Задача 1
             double ainput1 = 756.13;
             double x = 0.3;
@@ -17,13 +19,33 @@ public class Main {
             System.out.println(Task1.optionB(ainput1,x));
 
             // Задача 2
-            double ainput2 = 0.3;
-            double binput2 = -21.17;
             System.out.println("Задание №2:");
-            System.out.println("a="+ainput2);
-            System.out.println("b="+binput2);
-            System.out.println("Результат:");
-            System.out.println(Task2.calculate(ainput2, binput2));
+            System.out.println("\tЗначение по умолчанию: a=0.3, b=-21.17");
+            System.out.println("\tЕсли необходимо изменить эти значения введите цифру: 1");
+            System.out.println("\tв ином случае - введите любую другую цифру.");
+            System.out.println("\tи нажмите Enter");
+            String lineyninput= Util.consoleReadLine();
+            int lineyn[]=Util.lineToIntArray(lineyninput);
+            if (lineyn[0] != 1) {
+                double ainput2 = 0.3;
+                double binput2 = -21.17;
+                System.out.println("a="+ainput2);
+                System.out.println("b="+binput2);
+                System.out.println("Результат:");
+                System.out.println(Task2.calculate(ainput2, binput2));
+                }
+                else {
+                System.out.println("\tВведите значение a и b, через пробел");
+                System.out.println("\tи нажмите Enter");
+                String lineab = by.it.sereda.jd01_05.Util.consoleReadLine();
+                double arrab[] = by.it.sereda.jd01_05.Util.lineToDoubleArray(lineab);
+                double ainput2 = arrab[0];
+                double binput2 = arrab[1];
+                System.out.println("a="+ainput2);
+                System.out.println("b="+binput2);
+                System.out.println("Результат:");
+                System.out.println(Task2.calculate(ainput2, binput2));
+                }
 
             // Задача 3
             System.out.println("Задание №3:");

@@ -4,6 +4,7 @@ import java.io.IOException;
 
 /**
  * Runner для здания jd01_05.
+ *
  * @author Sinkevich Denis
  */
 public class MathRunner {
@@ -35,5 +36,7 @@ public class MathRunner {
         //Задание 6
         taskB.task2();
         System.out.println();
+        //Задание 7
+        new TaskC().task();
     }
 }

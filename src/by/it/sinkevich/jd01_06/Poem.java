@@ -26,5 +26,9 @@ public class Poem {
         System.out.println("Задание №4: ");
         System.out.println(taskB.task1());
         System.out.println();
+
+        System.out.println("Задание №5: ");
+        taskB.task2();
+        System.out.println();
     }
 }

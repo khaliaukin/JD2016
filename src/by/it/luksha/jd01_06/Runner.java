@@ -11,9 +11,8 @@ public class Runner {
         TaskB.task2();
         TaskB.task3("о");
 
-
-
-
+        TaskC.formatEdgewise();
+        System.out.println("Выигрыш в пользу StringBuilder " + ((TaskC.createPoemByConcat() - TaskC.createPoemByAppend())*1000) + " микросекунд");
 
     }
 }

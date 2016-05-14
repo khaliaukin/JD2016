@@ -48,5 +48,8 @@ class Poem {
         long difference = (noBuilder - withBuilder) * 1000;
         System.out.println("Разница во времени выполнения: " + difference + " мкс");
         System.out.println();
+
+        System.out.println("Задание №9: ");
+        taskC.task3();
     }
 }

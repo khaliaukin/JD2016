@@ -87,6 +87,21 @@ class TaskC {
         return endTime - startTime;
     }
 
+    void task3() {
+        String[] words = PoemText.getPoemtext().split("[^А-Яа-яЁё]+");
+        //Сортировка по заданию плюс по алфавиту для удобного вывода в консоль
+        sortDescendingLengthAscendingVowel(words);
+        System.out.println("Все слова текста рассортировать в порядке убывания их длин, " +
+                "при этом все слова одинаковой длины рассортировать в порядке возрастания в них количества гласных букв.\n" +
+                "Одинаковые слова сгруппировать и выводить один раз с числом их повторов в тексте. Регистр не важен.");
+        for (int i = 0; i < words.length - 1; i++) {
+            //Проверка для вывода только уникальных слов
+            if (!words[i].equalsIgnoreCase(words[i + 1])) {
+                System.out.println(words[i]);
+            }
+        }
+    }
+
     private int getMax(int[] numbers) {
         int max = Integer.MIN_VALUE;
         for (int num : numbers) {
@@ -161,5 +176,55 @@ class TaskC {
     private String getRandomWord(String[] words) {
         int randomIndex = (int) (Math.random() * words.length);
         return words[randomIndex];
+    }
+
+    /**
+     * Метод сортирует переданный в него массив слов. Первичная сортировка -- по убыванию длины слова,
+     * вторичная -- по возрастанию количества гласных в слове,
+     * третичная по алфавиту не учитывая регистр
+     *
+     * @param words массив слов для сортировки
+     */
+    private void sortDescendingLengthAscendingVowel(String[] words) {
+        //Паттерн для гласных букв
+        Pattern pattern = Pattern.compile("[АЕЁИОУЭЮЯаеёиоуыэюя]");
+        Matcher matcher;
+        //Сортировка пузырьком
+        for (int i = 0; i < words.length; i++) {
+            for (int j = 0; j < words.length - 1; j++) {
+                String word1 = words[j];
+                String word2 = words[j + 1];
+                //Первичная сортировка
+                if (word1.length() == word2.length()) {
+                    //Подсчёт гласных в соседних словах
+                    matcher = pattern.matcher(word1);
+                    int countOfVowels1 = 0;
+                    while (matcher.find()) {
+                        countOfVowels1++;
+                    }
+                    matcher = pattern.matcher(word2);
+                    int countOfVowels2 = 0;
+                    while (matcher.find()) {
+                        countOfVowels2++;
+                    }
+                    //Вторичная сортировка
+                    if (countOfVowels1 == countOfVowels2) {
+                        //Сортировка по алфавиту(группировка) по возрастанию
+                        if (word1.compareToIgnoreCase(word2) > 0) {
+                            words[j] = word2;
+                            words[j + 1] = word1;
+                        }
+                        //Вторичная по возрастанию
+                    } else if (countOfVowels1 > countOfVowels2) {
+                        words[j] = word2;
+                        words[j + 1] = word1;
+                    }
+                    //Первичная по убыванию
+                } else if (word1.length() < word2.length()) {
+                    words[j] = word2;
+                    words[j + 1] = word1;
+                }
+            }
+        }
     }
 }

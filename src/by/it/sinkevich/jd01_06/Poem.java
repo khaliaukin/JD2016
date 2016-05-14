@@ -40,5 +40,13 @@ class Poem {
         System.out.println(taskC.task1());
         System.out.println();
 
+        System.out.println("Задание №8: ");
+        long noBuilder = taskC.task2(false);
+        System.out.println("Время выполнения путём конкатенации строк: " + noBuilder + " мс");
+        long withBuilder = taskC.task2(true);
+        System.out.println("Время выполнения с использованием класса StringBuilder: " + withBuilder + " мс");
+        long difference = (noBuilder - withBuilder) * 1000;
+        System.out.println("Разница во времени выполнения: " + difference + " мкс");
+        System.out.println();
     }
 }

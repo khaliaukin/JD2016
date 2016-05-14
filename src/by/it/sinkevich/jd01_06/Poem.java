@@ -34,5 +34,11 @@ class Poem {
         System.out.println("Задание №6: ");
         taskB.task3("а");
         System.out.println();
+
+        TaskC taskC = new TaskC();
+        System.out.println("Задание №7: ");
+        System.out.println(taskC.task1());
+        System.out.println();
+
     }
 }

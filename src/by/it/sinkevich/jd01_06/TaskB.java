@@ -12,7 +12,7 @@ import java.util.regex.Pattern;
  *
  * @author Sinkevich Denis
  */
-public class TaskB {
+class TaskB {
 
     String task1() {
         //Создаём стрингбилдер с текстом стиха для последующего удаления слов в нём

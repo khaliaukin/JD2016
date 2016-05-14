@@ -5,7 +5,7 @@ package by.it.sinkevich.jd01_06;
  *
  * @author Sinkevich Denis
  */
-public class Poem {
+class Poem {
 
     public static void main(String[] args) {
         TaskA taskA = new TaskA();
@@ -29,6 +29,10 @@ public class Poem {
 
         System.out.println("Задание №5: ");
         taskB.task2();
+        System.out.println();
+
+        System.out.println("Задание №6: ");
+        taskB.task3("а");
         System.out.println();
     }
 }

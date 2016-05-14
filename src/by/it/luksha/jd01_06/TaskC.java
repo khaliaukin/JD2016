@@ -1,7 +1,9 @@
 package by.it.luksha.jd01_06;
 
 
-import java.util.Date;
+import java.util.*;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class TaskC {
 
@@ -65,20 +67,19 @@ public class TaskC {
     }
 
     /**
-    *    2. Сложить из случайных слов стихотворения строку ровно (!) в в миллион символов путем
-    *    конкатенации. Слова через пробел. Последнее слово нужно подобрать по длине. Затем:
-    *        • Определить время работы кода (тут удобно использовать System.currentTimeMillis() или аналог).
-    *        • Ускорить процесс, используя класс StringBuilder (сделать второй метод).
-    *        • Определить и вывести выигрыш в скорости (в микросекундах).
-    */
-
-
-    /**
      * Метод складывает из случайных слов стихотворения строку ровно (!) в в миллион символов путем
      * конкатенации. Слова через пробел. Рассчитывает затраченное время в миллисекундах.
      * @return время в миллисекундах
      */
     public static long createPoemByConcat() {
+        /*
+            2. Сложить из случайных слов стихотворения строку ровно (!) в в миллион символов путем
+            конкатенации. Слова через пробел. Последнее слово нужно подобрать по длине. Затем:
+                • Определить время работы кода (тут удобно использовать System.currentTimeMillis() или аналог).
+                • Ускорить процесс, используя класс StringBuilder (сделать второй метод).
+                • Определить и вывести выигрыш в скорости (в микросекундах).
+        */
+
         String poem = "";
         String[] dictionary = Data.lykomorie.split("[^а-яА-ЯЁё]+");
         int count = 1000000;
@@ -147,5 +148,84 @@ public class TaskC {
         return start + (int)(Math.random() * ((end - start) + 1));
     }
 
+    /**
+     * Метод сортирует и выводит в консоль результат сортировки (условие согласно заданию №3).
+     */
+    public static void sort() {
+        /**
+         * 3. Все слова текста рассортировать в порядке убывания их длин, при этом все слова
+         * одинаковой длины рассортировать в порядке возрастания в них количества гласных букв.
+         * Одинаковые слова сгруппировать и выводить один раз с числом их повторов в тексте.
+         * Регистр неважен.
+         */
 
+        //деление текста на массив слов
+        String[] words = Data.lykomorie.split("[^а-яА-ЯЁё]+");
+
+        //перевод всех символов слов в нижний регистр
+        for (int i = 0; i < words.length; i++) {
+            words[i] = words[i].toLowerCase();
+        }
+
+        //группировка слов имеющих повторения и оставшихся
+        ArrayList<String> listRepeatWords = new ArrayList<>();
+        ArrayList<String> listWords = new ArrayList<>();
+        for (int i = 0; i < words.length - 1; i++) {
+            int count = 1;
+            if (words[i].length() != 0)
+            {
+                for (int j = i+1; j < words.length; j++) {
+                    if (words[i].equals(words[j]))
+                    {
+                        count++;
+                        words[j] = "";
+                    }
+                }
+                if (count > 1)
+                    listRepeatWords.add("Слово \"" + words[i] + "\" встречается " + count + " раз(а)");
+                else
+                    listWords.add(words[i]);
+            }
+        }
+
+        //сортировка с созданием Компаратора
+        Collections.sort(listWords, new Comparator<String>() {
+            @Override
+            public int compare(String string1, String string2) {
+                if (string1.length() != string2.length()) {
+                    //слова разной длинны - сравниваем по длинне
+                    return string1.length() > string2.length() ? -1 : 1;
+                }
+                else if (string1.length() == string2.length()) {
+                    //слова одинаковой длинны - сравниваем по кол-ву гласных букв
+                    Pattern pattern = Pattern.compile("[ёуеыаоэяию]{1}");
+                    Matcher matcher1 = pattern.matcher(string1);
+                    Matcher matcher2 = pattern.matcher(string2);
+                    int count1 =0;
+                    while(matcher1.find())
+                    {
+                        count1++;
+                    }
+                    int count2 =0;
+                    while(matcher2.find())
+                    {
+                        count2++;
+                    }
+                    return count1 > count2 ? 1 : -1;
+                }
+                else
+                    return 0;
+            }
+        });
+
+        //вывод повторяющихся слов
+        for (String out: listRepeatWords) {
+            System.out.println(out);
+        }
+
+        //вывод остальных слов после сортировки
+        for (String out: listWords) {
+            System.out.println(out);
+        }
+    }
 }

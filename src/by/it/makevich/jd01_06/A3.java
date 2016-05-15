@@ -5,8 +5,7 @@ import java.util.regex.Pattern;
 
 public class A3 {
 	static boolean Glasnaya(String word){
-		String oae="яыуаиеоюэ";
-		oae=oae+oae.toUpperCase();
+		String oae="яыуаиеоюэЯЫУАИЕОЮЭ";
 		char first=word.charAt(0);
 		char last=word.charAt(word.length()-1);
 		return (oae.indexOf(first)>=0 && oae.indexOf(last)>=0);

@@ -7,8 +7,8 @@ public class Main {
 		/**
 		 * Задание 1
 		 */
-		System.out.println("Задание 1 (А): y=" + Task1.optionA(0.4,-4.17));
-		System.out.println("Задание 1 (B): y="+Task1.optionB(0.4,-4.17));
+		System.out.println("Task 1 (А): y=" + Task1.optionA(0.4,-4.17));
+		System.out.println("Task 1 (B): y="+Task1.optionB(0.4,-4.17));
 
 		/**
 		 * Задание 2 -  значения х и f заданы изначально. Вывод значения y.
@@ -38,21 +38,21 @@ public class Main {
 		 * Задание 4
 		 */
 		System.out.println("━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━");
-		System.out.println("Задание 4:");
+		System.out.println("Task 4");
 		System.out.println(Task4.calculate(2.408));
 
 		/**
 		 * Задание 5
 		 */
 		System.out.println("━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━");
-		System.out.println("Задание 5");
+		System.out.println("Task 5");
 		Task5.calculate();
 
 		/**
 		 * Задание 6
 		 */
 		System.out.println("━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━");
-		System.out.println("Задание 6");
+		System.out.println("Task 6");
 		double[] array=Task6.getArray();
 		Task6.printArray(array,"testname");
 		int count=Task6.count(array);
@@ -62,5 +62,18 @@ public class Main {
 		Task6.printArray(newArray,"Новый массив чисел имеющих нечетный индекс в массиве testname");
 		double increase=Task6.toIncrease(newArray);
 		System.out.println("Произведение всех чисел массива: "+increase);
+
+		/**
+		 * Задание 7
+		 */
+		System.out.println("━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━");
+		System.out.println("Task 7");
+		double[] arrayM=Task7.getRandomArray();
+		int counterArrayKlenth=Task7.count(arrayM);
+		double[] arrayK=Task7.getArrayKFromArrayM(arrayM,counterArrayKlenth);
+		Task7.printArrayM(arrayM);
+		System.out.println();
+		Task7.printArrayK(arrayK);
+
 	}
 }

@@ -38,7 +38,7 @@ public class B2 {
             }
         }
 
-        System.out.println("Предложения отсортированные:");
+        System.out.println("Результат:");
 
         printSentancies(sentancies);
     }

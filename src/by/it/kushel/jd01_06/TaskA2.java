@@ -9,24 +9,33 @@ import java.util.regex.Pattern;
  * Created by Diomn on 10.05.2016.
  */
 public class TaskA2 {
-    public static void main(String[] arg){
+    public static void main(String[] arg) {
         Pattern pat;
         Matcher mat;
         boolean found;
         String str = new String(Data.lukomor);
         pat = Pattern.compile("(^|[^А-яа-яЁё])([А-Яа-яЁё]++)");
-        mat=pat.matcher(str);
+        mat = pat.matcher(str);// Создание объекта класса Matcher с помощью фабричного метода matcher
         Map<String, Integer> hm = new HashMap<String, Integer>();
-        Integer count=1;
-        while(mat.find()) {
-            String word = mat.group(2);
 
 
-            if(hm.containsKey(word)){
-               count=hm.get(word)+1;
-                hm.put(word,count);
-            }else
-            hm.put(word,count);
+        while (mat.find()) {
+
+            String word = mat.group(2).toLowerCase();
+
+            if (hm.containsKey(word)) {
+                int prevCounts = hm.get(word);
+                hm.put(word, prevCounts + 1);
+
+            } else {
+                hm.put(word, 1);
+            }
+
         }
+
+        for (String word : hm.keySet()) {
+            System.out.println(word+" --> " +hm.get(word));
+        }
+
     }
 }

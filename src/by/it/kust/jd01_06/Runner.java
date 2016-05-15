@@ -7,9 +7,14 @@ public class Runner {
     public static void main(String[] args) {
         System.out.println("TaskA1");
         TaskA.replaceSymbol();
-        System.out.println("\nTaskA2");
+        System.out.println("TaskA2");
         TaskA.numberOfWords();
-        System.out.println("\nTaskA3");
+        System.out.println("TaskA3");
         TaskA.vowel();
+
+        System.out.println("TaskB1");
+        TaskB.deleteWords();
+        System.out.println("TaskB2");
+        TaskB.sortSentences();
     }
 }

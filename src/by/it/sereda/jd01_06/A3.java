@@ -1,6 +1,4 @@
-package by.it.sereda.jd01_06.Level_A;
-
-import by.it.sereda.jd01_06.Data;
+package by.it.sereda.jd01_06;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -18,7 +16,7 @@ public class A3 {
         return (oae.indexOf(first)>=0 && oae.indexOf(last)>=0);
     }
 
-    public static void main(String[ ] args) {
+    public static void countWordsWithTheVowelBegins() {
         //Получим строку в которой можно проводить замену символов.
         StringBuilder text=new StringBuilder(Data.lukomor);
         //сначала переберем все слова.
@@ -32,10 +30,10 @@ public class A3 {
             if (Glasnaya(m.group())) //если проверка показали гласные в начале и конце
             {
                 counter++;                     //то увеличим общий счетчик
-                System.out.println(m.group()); //и напечатаем слово
+                //System.out.println(m.group()); //и напечатаем слово
             }
 
-        System.out.print(counter);
+        System.out.print("найденное количество слов:"+counter);
 
     }
 

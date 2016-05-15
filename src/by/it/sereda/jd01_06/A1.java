@@ -1,13 +1,12 @@
-package by.it.sereda.jd01_06.Level_A;
+package by.it.sereda.jd01_06;
 
-import by.it.sereda.jd01_06.Data;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class A1 {
 
 
-    public static void main(String[ ] args) {
+    public static void changeLetters() {
         //Получим строку в которой можно проводить замену символов.
         //это StringBuilder. В String такое делать нельзя.
         StringBuilder text=new StringBuilder(Data.lukomor);

@@ -1,8 +1,6 @@
 package by.it.vasilevich.jd01_06;
 
-/**
- * Created by user_2 on 06.05.2016.
- */
+
 public class Utils {
     static String lukomor =
             "У лукоморья дуб зелёный;\n" +
@@ -45,5 +43,12 @@ public class Utils {
         char start = (line.charAt(0));
         char end = (line.charAt(line.length()-1));
         return (a.indexOf(start)>=0 && a.indexOf(end)>=0);
+    }
+
+    public static boolean Otbor2 (String line){
+        String a = "бвгджзйклмнпрстфхчцшщъь";
+        a = a+a.toUpperCase();
+        char start = (line.charAt(0));
+        return (a.indexOf(start)>=0);
     }
 }

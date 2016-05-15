@@ -58,13 +58,14 @@ public class RunTask {
 
         System.out.println();
         System.out.println("Задание B3:");
+        char symbol = 'а';
         System.out.println();
         System.out.println("Отсортировать слова в тексте");
-        System.out.println("по убыванию количества вхождений заданного символа,");
+        System.out.println("по убыванию количества вхождений заданного символа \""+symbol+"\" ,");
         System.out.println("а в случае равенства — по алфавиту.");
         System.out.println();
         System.out.println("Результат B3:");
-        B3.sortWordsForSymbol();
+        B3.sortWordsForSymbol(symbol);
         System.out.println();
 
 

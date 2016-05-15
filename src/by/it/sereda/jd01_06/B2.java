@@ -25,7 +25,7 @@ public class B2 {
             numberwordsinsentencies[i] = arrayofwords.length;
         }
 
-        for (int i = 0; i < sentancies.length - 1; i++) {//цикл сортировки
+        for (int i = 0; i < sentancies.length - 1; i++) {
             for (int j = i + 1; j < sentancies.length; j++) {
                 if (numberwordsinsentencies[i] > numberwordsinsentencies[j]) {
                     int numbertemp = numberwordsinsentencies[i];

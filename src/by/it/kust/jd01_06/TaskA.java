@@ -18,7 +18,8 @@ public class TaskA {
             if (length > 6)
                 text.setCharAt(start+6, '#');
         }
-        System.out.print(text);
+        System.out.println("В каждом слове 5-я и 7-я буквы заменены на символ \"#\":\n" + text);
+        System.out.println("=========================================================================================");
     }
 
     public static void numberOfWords(){
@@ -33,9 +34,10 @@ public class TaskA {
                         mastext[j] = "";
                     }
                 }
-                System.out.println("Число повторов слова \n" + mastext[i] + "\nсоставляет " + count);
+                System.out.println("Число повторов слова " + mastext[i] + " составляет " + count);
             }
         }
+        System.out.println("=========================================================================================");
     }
 
     static boolean beginEndWithVowels(String word){
@@ -54,8 +56,9 @@ public class TaskA {
         while (m.find())
             if (beginEndWithVowels(m.group())){
                 counter++;
-                System.out.println(m.group());
+                System.out.println("Слово, начинающееся и заканчивающееся с гласной буквы: " + m.group());
             }
         System.out.println("Количество слов, начинающихся и заканчивающихся на гласные: " + counter);
+        System.out.println("=========================================================================================");
     }
 }

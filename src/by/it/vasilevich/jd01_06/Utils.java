@@ -1,6 +1,12 @@
 package by.it.vasilevich.jd01_06;
 
+<<<<<<< HEAD
 
+=======
+/**
+ * Created by user_2 on 06.05.2016.
+ */
+>>>>>>> origin/master
 public class Utils {
     static String lukomor =
             "У лукоморья дуб зелёный;\n" +
@@ -44,6 +50,7 @@ public class Utils {
         char end = (line.charAt(line.length()-1));
         return (a.indexOf(start)>=0 && a.indexOf(end)>=0);
     }
+<<<<<<< HEAD
 
     public static boolean Otbor2 (String line){
         String a = "бвгджзйклмнпрстфхчцшщъь";
@@ -55,4 +62,6 @@ public class Utils {
     public static int repeat (String s, String s2) {
         return (s + "\0").split(s2).length - 1;
     }
+=======
+>>>>>>> origin/master
 }

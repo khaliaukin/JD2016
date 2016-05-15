@@ -1,9 +1,7 @@
-package by.it.sereda.jd01_06.Level_A;
-
-import by.it.sereda.jd01_06.Data;
+package by.it.sereda.jd01_06;
 
 public class A2 {
-    public static void main(String[ ] args) {
+    public static void countWordRepeat() {
         //Получим строку в которой лежат слова
         String text= Data.lukomor;
         //переберем все слова и разместим их в массиве.
@@ -14,17 +12,17 @@ public class A2 {
 
         for (int i = 0; i < mastext.length; i++) {
             if (mastext[i].length()>0)
-            {
-                int count=1;
-                for (int j = i+1; j < mastext.length; j++) {
-                    if (mastext[i].equals(mastext[j]))
-                    {
-                        count++;
-                        mastext[j]="";
+                {
+                    int count=1;
+                    for (int j = i+1; j < mastext.length; j++) {
+                        if (mastext[i].equals(mastext[j]))
+                        {
+                            count++;
+                            mastext[j]="";
+                        }
                     }
-                }
                 System.out.println("Число повторов слова \""+mastext[i]+"\" составляет "+count);
-            }
+                }
         }
 
     }

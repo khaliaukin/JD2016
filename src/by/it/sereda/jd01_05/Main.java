@@ -74,5 +74,15 @@ public class Main {
             Task6.arrayPrint(geoarray,"Элемент", 5);
             double geom = Task6.geometricMean(geoarray);
             System.out.println("Среднее геометрическое массива элементов >3.5 составляет:=:"+geom);
+
+            // Задача
+            int arraysize = 29;
+            int randomminincluded = -7;
+            int randommaxincluded = -4;
+            double arrayrandom[]= Task7.arrayrandom(arraysize, randomminincluded, randommaxincluded);
+            System.out.println("Массив сгенерированных чисел");
+            Util.arrayPrint(arrayrandom, "Random", 7);
+            Util.printArrayA(arrayrandom);
+
         }
 }

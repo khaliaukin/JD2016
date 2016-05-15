@@ -37,5 +37,34 @@ public class Util {
         return array;
     }
     //преобразование одной строки в массив чисел
+    public static void arrayPrint (double[] mas, String name, int cols) {
+        int col=0;
+        for (int i = 0; i < mas.length; i++) {
+            System.out.print(name);                             //печатаем имя массива
+            System.out.printf("[% -3d]=%-9.2f ", i, mas[i]);     //печатаем значения
+            col++;
+            if ((0==col%cols)                                   //если конец колонки
+                    || (mas.length-1==i))                              //или конец массива
+            {
+                System.out.println();               //тогда печатаем перевод строки
+            }
+        }
+    }
+    public static void printArrayA (double[] array){
+        int coll=1;
+        System.out.println("Массив A");
+        //System.out.println("");
+        for (int i=0;i<array.length;i++){
+            System.out.format(" A[%2d]=%3.2f",i,array[i]);
+            if (coll%5==0 || coll==array.length)//Вывод массива в 5 столбцов
+            {
+                System.out.println("");
+            }
+            coll++;
+        }
+        System.out.println("");
+    }
+
+
 
 }

@@ -51,4 +51,8 @@ public class Utils {
         char start = (line.charAt(0));
         return (a.indexOf(start)>=0);
     }
+
+    public static int repeat (String s, String s2) {
+        return (s + "\0").split(s2).length - 1;
+    }
 }

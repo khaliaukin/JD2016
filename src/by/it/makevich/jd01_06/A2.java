@@ -9,7 +9,6 @@ public class A2 {
 			if (arr[i].length()>0) {
 				int count = 1;
 				String n;
-
 				for (int j = i + 1; j < arr.length; j++) {// сравниваем i с j
 					if (arr[i].equals(arr[j])) {
 						count++;
@@ -17,8 +16,7 @@ public class A2 {
 					}
 				}
 				if (count%10>1&&count%10<5){n="раза";}else{//делаем правильное окончание у слова "раз(а)"
-					n ="раз";
-				}
+					n ="раз";}
 				System.out.println("слово: \"" + arr[i] + "\" встречается " + count + " "+n);
 			}
 		}

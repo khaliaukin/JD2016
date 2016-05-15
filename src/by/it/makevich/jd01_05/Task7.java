@@ -12,8 +12,8 @@ public class Task7 {
 	}
 	protected static int count(double[]arrayM){
 		int count=0;
-		int res=0;
-		double fraction=0.0;
+		int res;
+		double fraction;
 		for (int i=0;i<arrayM.length;i++){
 			res = (int) arrayM[i]; //целая часть
 			fraction = arrayM[i] - res; //дробная часть
@@ -24,8 +24,8 @@ public class Task7 {
 		return count;
 	}
 	protected static double[] getArrayKFromArrayM(double[] arrayM, int count){
-		int res=0;
-		double fraction=0.0;
+		int res;
+		double fraction;
 		int j=0;
 		double[] arrayK=new double[count];
 		for (int i=0;i<arrayM.length;i++) {
@@ -37,7 +37,7 @@ public class Task7 {
 			}else continue;
 
 		}
-		double temp=0.0;
+		double temp;
 		for (int k=0;k<arrayK.length-1;k++){
 			for (int l=k+1;l<arrayK.length;l++){
 				if(arrayK[k]<arrayK[l]){

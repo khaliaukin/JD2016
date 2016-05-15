@@ -18,7 +18,7 @@ public class TaskB3 {
         pat = Pattern.compile("(^|[^А-яа-яЁё])([А-Яа-яЁё]++)");
         mat = pat.matcher(str);
         String[] words = str.split("[^а-яА-ЯёЁ]+");
-        CustomStringComparator compor = new CustomStringComparator();
+        CustomStringComparator compor = new CustomStringComparator('а');
 
         for (int i=0; i<words.length; i++) {
             words[i]=words[i].toLowerCase();

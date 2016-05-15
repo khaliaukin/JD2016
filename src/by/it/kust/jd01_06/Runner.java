@@ -16,5 +16,7 @@ public class Runner {
         TaskB.deleteWords();
         System.out.println("TaskB2");
         TaskB.sortSentences();
+        System.out.println("TaskB3");
+        TaskB.sortWords();
     }
 }

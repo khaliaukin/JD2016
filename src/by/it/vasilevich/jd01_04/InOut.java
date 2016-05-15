@@ -49,4 +49,6 @@ public class InOut {
 //        double mA[]=Utils.findRoot(array2,array,false);
 //        System.out.println(mA);
     }
+    double[] vectorY = {1,14,32,23};
+//    Utils.printArray(vectorY,"x");
 }

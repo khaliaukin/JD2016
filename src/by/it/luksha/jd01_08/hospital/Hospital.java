@@ -29,4 +29,5 @@ public class Hospital {
     public void addPatient(Patient patient) {
         listPatient.add(patient);
     }
+
 }

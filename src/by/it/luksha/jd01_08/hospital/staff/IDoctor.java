@@ -45,5 +45,4 @@ public interface IDoctor {
      * Метод сбрасывает счетчик наработанных врачом часов
      */
     void rest();
-
 }

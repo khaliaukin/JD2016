@@ -40,6 +40,4 @@ public class Neurosurgeon extends Surgeon {
     public String toString() {
         return super.toString() + " Моя специализация - " + specialization + ".";
     }
-
-
 }

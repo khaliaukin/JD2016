@@ -157,4 +157,5 @@ public abstract class Surgeon implements IDoctor {
     public String toString() {
         return "Меня зовут " + this.name + ". Я врач-хирург с навыком в " + skill + " балл(ов).";
     }
+
 }

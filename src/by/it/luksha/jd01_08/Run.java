@@ -72,5 +72,6 @@ public class Run {
         }
 
         badDM.makeReport();
+
     }
 }

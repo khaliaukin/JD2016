@@ -59,7 +59,8 @@ public class Main {
         //TextUtils.replaceWord57(s);
         //System.out.println(s);
 
-        TextUtils.calculateWords(s);
-       // System.out.println(s);
+        //TextUtils.calculateWords(s);
+       //System.out.println(s);
+        TextUtils.calculateGlasWords(s);
     }
 }
